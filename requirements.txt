@@ -1,8 +1,5 @@
-altair
-pandas
 streamlit
 keras
 numpy
 tensorflow
 Pillow
-opencv-python
