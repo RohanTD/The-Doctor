@@ -16,19 +16,6 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
-
-cnn = load_model('v4_melanoma')
-
-
-st.title('Welcome To CAC APP WORK PLEASE!')
-
-file = st.file_uploader('Upload An Image')
-if file:  # if user uploaded file
-        img = Image.open(file)
-        prediction = get_prediction(img)
-        st.write(prediction)
-    
-
 def get_prediction(img):
     dimension = 224
     channels = 3
@@ -43,3 +30,17 @@ def get_prediction(img):
     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
     return cnn.predict(arr)
+
+if __name__ == '__main__':
+        cnn = load_model('v4_melanoma')
+
+
+        st.title('Welcome To CAC APP WORK PLEASE!')
+
+        file = st.file_uploader('Upload An Image')
+        if file:  # if user uploaded file
+               img = Image.open(file)
+               prediction = get_prediction(img)
+               st.write(prediction)
+    
+
