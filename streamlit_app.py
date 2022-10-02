@@ -5,8 +5,6 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from keras.models import load_model
-import cv2
-from matplotlib import pyplot as plt
 
 """
 # Welcome to Streamlit!
