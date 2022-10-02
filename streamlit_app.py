@@ -6,6 +6,7 @@ import streamlit as st
 import numpy as np
 from keras.models import load_model
 from PIL import Image
+import cv2
 
 """
 # Welcome to Streamlit!
