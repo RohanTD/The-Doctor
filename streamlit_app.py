@@ -3,6 +3,10 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import numpy as np
+from keras.models import load_model
+import cv2
+from matplotlib import pyplot as plt
 
 """
 # Welcome to Streamlit!
@@ -36,3 +40,26 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+    
+
+
+cnn = load_model('v4_melanoma')
+
+dimension = 224
+channels = 3
+
+def get_prediction(path):
+    img = cv2.imread(path, cv2.IMREAD_UNCHANGED)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
+    image = img
+
+    size = (dimension, dimension)
+    image = cv2.resize(image, size)
+
+    image_array = np.asarray(image)
+    arr[0] = (image_array.astype(np.float32) / 127.0) - 1
+
+    return cnn.predict(arr)
+
+print(get_prediction('mel/test/Melanoma/AUG_0_11.jpeg'))
