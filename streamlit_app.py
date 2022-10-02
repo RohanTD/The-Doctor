@@ -42,7 +42,7 @@ if __name__ == '__main__':
                cnn = load_model('v4_melanoma')
                img = Image.open(file)
                prediction = get_prediction(img)
-               if prediction < 0.5:
+               if prediction[0] < 0.5:
                     st.write("Melanoma")
                else:
                     st.write("Not Melanoma")
