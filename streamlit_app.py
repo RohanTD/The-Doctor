@@ -19,6 +19,7 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+cnn = load_model('v4_melanoma')
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
@@ -42,13 +43,11 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
     
 
-
-cnn = load_model('v4_melanoma')
-
-dimension = 224
-channels = 3
-
 def get_prediction(path):
+    
+    dimension = 224
+    channels = 3
+    
     img = cv2.imread(path, cv2.IMREAD_UNCHANGED)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
@@ -61,5 +60,3 @@ def get_prediction(path):
     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
     return cnn.predict(arr)
-
-print(get_prediction('mel/test/Melanoma/AUG_0_11.jpeg'))
