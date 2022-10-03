@@ -21,18 +21,19 @@ In the meantime, below is an example of what you can do with just a few lines of
 cnn=0
 
 def get_prediction(img):
-    dimension = 224
-    channels = 3
-    
-    arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
+    img = img.convert("RGB")
+    img = np.asarray(img)
+    arr = np.ndarray(shape=(1, dimension, dimension,
+                     channels), dtype=np.float32)
     image = img
 
     size = (dimension, dimension)
-    image = image.resize(size)
+    image = cv2.resize(image, size)
 
     image_array = np.asarray(image)
     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
+    cnn = load_model('v4_melanoma')
     return cnn.predict(arr)
 
 if __name__ == '__main__':
