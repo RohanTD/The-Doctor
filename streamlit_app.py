@@ -21,6 +21,9 @@ In the meantime, below is an example of what you can do with just a few lines of
 cnn=0
 
 def get_prediction(img):
+    dimension = 224
+    channels = 3
+    
     img = img.convert("RGB")
     img = np.asarray(img)
     arr = np.ndarray(shape=(1, dimension, dimension,
