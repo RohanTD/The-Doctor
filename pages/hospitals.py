@@ -75,3 +75,6 @@ def get_hospitals():
             st.write(f"Directions: {place.url}")
             st.write(f"Website: {place.website}")
             st.write("\n")
+
+
+get_hospitals()
