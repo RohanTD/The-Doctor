@@ -109,7 +109,7 @@ def get_hospitals():
             )
             imgLink = requests.post(link)
             # st.image(Image.open(place.photos[0]))
-            Image.open(imgLink)
+            Image.open(link)
             st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.formatted_address}")
