@@ -66,7 +66,7 @@ def get_hospitals():
 			"""
         ),
     )
-    result = streamlit_bokeh_events(
+    response = streamlit_bokeh_events(
         loc_button,
         events="GET_LOCATION",
         key="get_location",
@@ -74,7 +74,7 @@ def get_hospitals():
         override_height=75,
         debounce_time=0,
     )
-    response = json.loads(result)
+    st.write(response)
     places = GooglePlaces(a)
     query_result = places.nearby_search(
         lat_lng={
