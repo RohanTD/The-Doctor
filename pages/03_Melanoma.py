@@ -8,6 +8,10 @@ st.set_page_config(page_title="Melanoma Predictor", page_icon="")
 st.markdown("# Melanoma  Predictor")
 st.sidebar.markdown("# Melanoma  Predictor")
 
+st.write(
+    "Upload an image of the suspected cancerous area. For best results, be sure that the grwoth is centered, covers a majority of the screen, and is minimally obstructed by hair"
+)
+
 
 def get_prediction(img):
     dimension = 224

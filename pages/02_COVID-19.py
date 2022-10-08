@@ -6,6 +6,7 @@ import sklearn
 st.set_page_config(page_title="COVID-19 Predictor", page_icon="")
 st.markdown("# COVID-19  Predictor")
 st.sidebar.markdown("# COVID-19  Predictor")
+st.write("Input your symptoms below")
 
 
 def covid():
