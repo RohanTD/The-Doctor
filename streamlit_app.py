@@ -48,7 +48,7 @@ def get_prediction(img):
 
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
-    range = 10000  # in miles
+    range = 5  # in miles
     loc_button = Button(label="Allow Location Access")
     loc_button.js_on_event(
         "button_click",
