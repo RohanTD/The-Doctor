@@ -5,5 +5,8 @@ tensorflow
 Pillow
 opencv-python-headless
 wheel
+nes-py
+setuptools
 requests
+jsonlib
 python-google-places
