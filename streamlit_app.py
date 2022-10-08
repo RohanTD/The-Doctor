@@ -74,7 +74,7 @@ def get_hospitals():
         override_height=75,
         debounce_time=0,
     )
-    response = json.loads(response)
+    response = json.loads(result)
     places = GooglePlaces(a)
     query_result = places.nearby_search(
         lat_lng={
