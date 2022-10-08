@@ -48,6 +48,7 @@ def get_hospitals():
     range = 10000  # in miles
     r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
 
+    st.write(r)
     response = json.loads(r.content)
     st.write(response)
 
