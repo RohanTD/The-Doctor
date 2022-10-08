@@ -46,8 +46,17 @@ def get_prediction(img):
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range = 10000  # in miles
-    r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
+    # r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
+    apiKey = "9fe19182c5bf4d1bb105da08e593a578"
+    # print(len(County))
 
+    # print(f)
+    path1 = (
+        "https://data.covidactnow.org/latest/us/counties/"
+        + "harris"
+        + ".OBSERVED_INTERVENTION.timeseries.json?apiKey="
+        + apiKey
+    )
     st.write(r)
     response = json.loads(r.content)
     st.write(response)
