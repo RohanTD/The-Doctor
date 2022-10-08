@@ -78,7 +78,7 @@ def covid():
                 <h1 style="text-align: center;">&nbsp;</h1>""",
                 unsafe_allow_html=True,
             )
-    else:
+    elif y_pred[0]==0:
         st.write(
             """<div style="text-align: center;">
             <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely DO NOT have COVID-19. If you are feeling similar symptoms, please get tested.</span></span></div>
