@@ -4,3 +4,6 @@ numpy
 tensorflow
 Pillow
 opencv-python-headless
+requests
+json
+python-google-places
