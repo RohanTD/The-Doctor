@@ -7,6 +7,7 @@ from streamlit_bokeh_events import streamlit_bokeh_events
 
 st.set_page_config(page_title="Hospital Finder", page_icon="")
 st.markdown("# Hospital Finder")
+st.sidebar.markdown("# Hospital Finder")
 
 
 def get_hospitals():
