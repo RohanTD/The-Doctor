@@ -12,3 +12,5 @@ Pillow
 opencv-python-headless
 requests
 python-google-places
+bokeh
+streamlit-bokeh-events
