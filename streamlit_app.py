@@ -100,7 +100,9 @@ def get_hospitals():
             )
 
             st.subheader(f"{place.name}")
-            st.write(int(place.rating))
+            k = int(place.rating)
+            for j in range(k):
+                pass
             #  for j in range(int(place.rating)):
             st.image("star TP.png", width=20)
             # st.write(f"Rating: {place.rating}")
