@@ -49,21 +49,17 @@ def get_prediction(img):
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range = 10000  # in miles
-    # r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
-    # st.write(r)
-    # response = json.loads(r.content)
-    # st.write(response)
     loc_button = Button(label="Get Location")
     loc_button.js_on_event(
         "button_click",
         CustomJS(
             code="""
-				navigator.geolocation.getCurrentPosition(
-					(loc) => {
-						document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
-					}
-				)
-			"""
+                navigator.geolocation.getCurrentPosition(
+                    (loc) => {
+                        document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+                    }
+                )
+            """
         ),
     )
     response = streamlit_bokeh_events(
@@ -74,38 +70,40 @@ def get_hospitals():
         override_height=75,
         debounce_time=0,
     )
-    places = GooglePlaces(a)
-    query_result = places.nearby_search(
-        lat_lng={
-            "lat": response["GET_LOCATION"]["lat"],
-            "lng": response["GET_LOCATION"]["lon"],
-        },
-        radius=range * 1609,
-        types=[types.TYPE_HOSPITAL],
-    )
-
-    if query_result.has_attributions:
-        st.write(query_result.html_attributions)
-    if len(query_result.places) == 0:
-        st.write(f"There are no hospitals in a {str(range)} mile proximity.")
-
-    results = []
-    for i, place in enumerate(query_result.places):
-        place.get_details()
-
-        results.append(
-            {
-                "name": place.name,
-                "formatted_address": place.formatted_address,
-                "website": place.website,
-                "gmapsURL": place.url,
-            }
+    st.write(response)
+    if loc_button:
+        places = GooglePlaces(a)
+        query_result = places.nearby_search(
+            lat_lng={
+                "lat": response["GET_LOCATION"]["lat"],
+                "lng": response["GET_LOCATION"]["lon"],
+            },
+            radius=range * 1609,
+            types=[types.TYPE_HOSPITAL],
         )
 
-        st.write(f"({i}) : {place.name}")
-        st.write(f"  -  {place.formatted_address}")
-        st.write(f"  -  {place.url}")
-        st.write(f"  -  {place.website}")
+        if query_result.has_attributions:
+            st.write(query_result.html_attributions)
+        if len(query_result.places) == 0:
+            st.write(f"There are no hospitals in a {str(range)} mile proximity.")
+
+        results = []
+        for i, place in enumerate(query_result.places):
+            place.get_details()
+
+            results.append(
+                {
+                    "name": place.name,
+                    "formatted_address": place.formatted_address,
+                    "website": place.website,
+                    "gmapsURL": place.url,
+                }
+            )
+
+            st.write(f"({i}) : {place.name}")
+            st.write(f"  -  {place.formatted_address}")
+            st.write(f"  -  {place.url}")
+            st.write(f"  -  {place.website}")
 
 
 if __name__ == "__main__":
