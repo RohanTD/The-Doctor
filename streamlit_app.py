@@ -76,7 +76,7 @@ def get_hospitals():
     )
     st.write(response)
     st.write(str(response).replace("'", '"'))
-    jsontest = json.loads(str(response))
+    jsontest = json.loads(str(response).replace("'", '"'))
     places = GooglePlaces(a)
     query_result = places.nearby_search(
         lat_lng={
