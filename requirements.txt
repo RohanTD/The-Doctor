@@ -11,5 +11,4 @@ tensorflow
 Pillow
 opencv-python-headless
 requests
-jsonlib
 python-google-places
