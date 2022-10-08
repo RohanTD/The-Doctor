@@ -70,7 +70,6 @@ def get_hospitals():
         override_height=75,
         debounce_time=0,
     )
-    st.write(response)
     if response != None:
         places = GooglePlaces(a)
         query_result = places.nearby_search(
@@ -107,9 +106,9 @@ def get_hospitals():
 
 
 if __name__ == "__main__":
-    st.title("Welcome To the Medical App!")
+    st.title("Melanoma Detection")
 
-    file = st.file_uploader("Upload An Image (Melanoma Detection)")
+    file = st.file_uploader("Upload An Image")
     if file:  # if user uploaded file
         img = Image.open(file)
         prediction = get_prediction(img)
@@ -117,4 +116,6 @@ if __name__ == "__main__":
             st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
         else:
             st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+
+    st.title("Hospital Finder")
     get_hospitals()
