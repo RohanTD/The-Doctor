@@ -223,3 +223,5 @@ if __name__ == "__main__":
 
     st.title("Hospital Finder")
     get_hospitals()
+    st.title("COVID")
+    covid()
