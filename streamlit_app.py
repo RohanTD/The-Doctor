@@ -101,7 +101,9 @@ def get_hospitals():
 
             st.subheader(f"{place.name}")
 
-            st.write(f"Rating: {place.rating}")
+            for i in range(int(place.rating)):
+                st.image("star TP.png")
+            # st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.formatted_address}")
             st.write(f"Directions: {place.url}")
