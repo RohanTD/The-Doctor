@@ -103,7 +103,7 @@ def get_hospitals():
             imgID = place.photos[0].photo_reference
             st.write(imgID)
             link = (
-                "https://maps.googleapis.com/maps/api/place/photo&photo_reference="
+                "https://maps.googleapis.com/maps/api/place/photo?photo_reference="
                 + imgID
                 + "&key="
                 + a
