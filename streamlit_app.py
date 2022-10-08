@@ -107,8 +107,10 @@ def get_hospitals():
                 + "&key="
                 + a
             )
-            img = requests.get(link)
-            st.image(img)
+            imgLink = requests.get(link)
+            file = open(place.name + ".png", "wb")
+            file.write(imgLink.content)
+            st.image(file)
             # st.image(Image.open(place.photos[0]))
 
             st.write(f"Rating: {place.rating}")
