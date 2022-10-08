@@ -74,7 +74,7 @@ def get_hospitals():
         + apiKey
     )
 
-    r = requests.get(path1)
+    r = requests.post(path1)
     st.write(r)
     response = json.loads(r.content)
     st.write(response)
