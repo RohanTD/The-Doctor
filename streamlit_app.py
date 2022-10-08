@@ -102,7 +102,7 @@ def get_hospitals():
             st.subheader(f"{place.name}")
             st.write(place.photos[0])
             st.write(np.array(place.photos[0]).shape)
-            st.image(np.array(place.photos[0]))
+            st.image(Image.open(place.photos[0]))
             st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.formatted_address}")
