@@ -101,20 +101,15 @@ def get_hospitals():
 
             st.subheader(f"{place.name}")
             imgID = place.photos[0].photo_reference
-            st.write(imgID)
-            st.write(str(Image.open(place.photos[0])))
             link = (
                 "https://maps.googleapis.com/maps/api/place/photo?photo_reference="
                 + imgID
                 + "&key="
                 + a
             )
-            imgLink = requests.get(link)
-            file = open(place.name + ".png", "wb")
-            file.write(imgLink.content)
-            st.image(Image.open(link))
+            imgLink = requests.post(link)
             # st.image(Image.open(place.photos[0]))
-
+            Image.open(imgLink)
             st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.formatted_address}")
