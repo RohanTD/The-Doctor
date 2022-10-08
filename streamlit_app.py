@@ -96,4 +96,4 @@ if __name__ == "__main__":
             st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
         else:
             st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
-	get_hospitals()
+    get_hospitals()
