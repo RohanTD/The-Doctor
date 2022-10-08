@@ -75,7 +75,7 @@ def get_hospitals():
         debounce_time=0,
     )
     st.write(response)
-    st.write(str(response))
+    st.write(str(response).replace("'", '"'))
     jsontest = json.loads(str(response))
     places = GooglePlaces(a)
     query_result = places.nearby_search(
