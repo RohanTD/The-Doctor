@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib
+import pandas as pd
 import sklearn
 
 st.set_page_config(page_title="COVID-19 Predictor ", page_icon="")

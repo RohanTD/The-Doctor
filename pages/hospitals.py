@@ -1,21 +1,9 @@
 from googleplaces import GooglePlaces, types, lang
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
-import numpy as np
-from keras.models import load_model
-from PIL import Image
-import cv2
-import requests
-import json
 from googleplaces import GooglePlaces, types, lang
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
-import joblib
-import sklearn
 
 st.set_page_config(page_title="Hospital Finder", page_icon="")
 st.markdown("# Hospital Finder")
