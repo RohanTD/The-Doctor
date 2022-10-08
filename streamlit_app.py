@@ -49,7 +49,7 @@ def get_prediction(img):
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range = 10000  # in miles
-    loc_button = Button(label="Get Location")
+    loc_button = Button(label="Allow Location Access")
     loc_button.js_on_event(
         "button_click",
         CustomJS(
@@ -99,10 +99,10 @@ def get_hospitals():
                 }
             )
 
-            st.write(f"({i}) : {place.name}")
-            st.write(f"  -  {place.formatted_address}")
-            st.write(f"  -  {place.url}")
-            st.write(f"  -  {place.website}")
+            st.subheader(f"{place.name}")
+            st.write(f"Address: {place.formatted_address}")
+            st.write(f"Directions: {place.url}")
+            st.write(f"Website: {place.website}")
 
 
 if __name__ == "__main__":
