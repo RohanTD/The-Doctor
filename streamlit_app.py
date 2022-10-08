@@ -75,11 +75,12 @@ def get_hospitals():
         debounce_time=0,
     )
     st.write(response)
+    jsontest = json.loads(response.text)
     places = GooglePlaces(a)
     query_result = places.nearby_search(
         lat_lng={
-            "lat": response["location"]["lat"],
-            "lng": response["location"]["lng"],
+            "lat": response["GET_LOCATION"]["lat"],
+            "lng": response["GET_LOCATION"]["lng"],
         },
         radius=range * 1609,
         types=[types.TYPE_HOSPITAL],
