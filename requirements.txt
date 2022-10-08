@@ -6,6 +6,7 @@ tensorflow
 Pillow
 opencv-python-headless
 wheel
+gcc7
 nes-py
 setuptools
 requests
