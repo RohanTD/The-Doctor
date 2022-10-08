@@ -14,3 +14,4 @@ requests
 python-google-places
 bokeh
 streamlit-bokeh-events
+joblib
