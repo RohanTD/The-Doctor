@@ -34,7 +34,7 @@ def get_prediction(img):
 
 file = st.file_uploader("Upload An Image")
 if file:  # if user uploaded file
-    if(st.button("Check if you have melanoma!"):
+    if(st.button("Check if you have melanoma!")):
         img = Image.open(file)
         prediction = get_prediction(img)
         if prediction[0] < 0.5:
