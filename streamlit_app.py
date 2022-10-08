@@ -57,6 +57,8 @@ def get_hospitals():
         + ".OBSERVED_INTERVENTION.timeseries.json?apiKey="
         + apiKey
     )
+
+    r = requests.get(path1)
     st.write(r)
     response = json.loads(r.content)
     st.write(response)
