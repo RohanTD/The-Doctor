@@ -38,13 +38,14 @@ def get_prediction(img):
     return cnn.predict(arr)
 
 if __name__ == '__main__':
-        st.title('Welcome To CAC APP WORK PLEASE!')
+     st.title('Welcome To the Medical App!')
 
-        file = st.file_uploader('Upload An Image')
-        if file:  # if user uploaded file   
-               img = Image.open(file)
-               prediction = get_prediction(img)
-               if prediction[0] < 0.5:
-                    st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
-               else:
-                    st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+     file = st.file_uploader('Upload An Image (Melanoma Detection)')
+     if file:  # if user uploaded file   
+          img = Image.open(file)
+          prediction = get_prediction(img)
+          if prediction[0] < 0.5:
+               st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
+          else:
+               st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+
