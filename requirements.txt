@@ -6,5 +6,4 @@ Pillow
 opencv-python-headless
 wheel
 requests
-jsonlib
 python-google-places
