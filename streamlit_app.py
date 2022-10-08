@@ -49,6 +49,7 @@ def get_hospitals():
     r = requests.post(rf"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
 
     response = json.loads(r.content)
+    st.write(response)
 
     st.write(f'(Location accurate to {response["accuracy"]/1609} miles.)\n')
     places = GooglePlaces(a)
@@ -70,14 +71,14 @@ def get_hospitals():
     for i, place in enumerate(query_result.places):
         place.get_details()
 
-        results.append(
-            {
-                "name": place.name,
-                "formatted_address": place.formatted_address,
-                "website": place.website,
-                "gmapsURL": place.url,
-            }
-        )
+    results.append(
+        {
+            "name": place.name,
+            "formatted_address": place.formatted_address,
+            "website": place.website,
+            "gmapsURL": place.url,
+        }
+    )
 
     st.write(f"({i}) : {place.name}")
     st.write(f"  -  {place.formatted_address}")
