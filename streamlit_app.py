@@ -96,19 +96,19 @@ def get_hospitals():
     for i, place in enumerate(query_result.places):
         place.get_details()
 
-    results.append(
-        {
-            "name": place.name,
-            "formatted_address": place.formatted_address,
-            "website": place.website,
-            "gmapsURL": place.url,
-        }
-    )
+        results.append(
+            {
+                "name": place.name,
+                "formatted_address": place.formatted_address,
+                "website": place.website,
+                "gmapsURL": place.url,
+            }
+        )
 
-    st.write(f"({i}) : {place.name}")
-    st.write(f"  -  {place.formatted_address}")
-    st.write(f"  -  {place.url}")
-    st.write(f"  -  {place.website}")
+        st.write(f"({i}) : {place.name}")
+        st.write(f"  -  {place.formatted_address}")
+        st.write(f"  -  {place.url}")
+        st.write(f"  -  {place.website}")
 
 
 if __name__ == "__main__":
