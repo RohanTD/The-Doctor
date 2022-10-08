@@ -71,7 +71,7 @@ def get_hospitals():
         debounce_time=0,
     )
     st.write(response)
-    if loc_button:
+    if response != None:
         places = GooglePlaces(a)
         query_result = places.nearby_search(
             lat_lng={
