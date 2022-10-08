@@ -102,7 +102,7 @@ def get_hospitals():
             st.subheader(f"{place.name}")
             imgID = place.photos[0].photo_reference
             st.write(imgID)
-            st.write(str(place.photos))
+            st.write(str(place.photos[0]))
             link = (
                 "https://maps.googleapis.com/maps/api/place/photo?photo_reference="
                 + imgID
