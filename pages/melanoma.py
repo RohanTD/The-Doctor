@@ -5,7 +5,8 @@ from PIL import Image
 import cv2
 
 st.set_page_config(page_title="Melanoma Predictor", page_icon="")
-st.markdown("# COVID-19  Predictor")
+st.markdown("# Melanoma  Predictor")
+st.sidebar.markdown("# Melanoma  Predictor")
 
 
 def get_prediction(img):
