@@ -100,7 +100,14 @@ def get_hospitals():
             )
 
             st.subheader(f"{place.name}")
-            img = requests.get(place.photos[0])
+            imgID = place.photos[0].photo_reference
+            link = (
+                "https://maps.googleapis.com/maps/api/place/photo&photo_reference="
+                + imgID
+                + "&key="
+                + a
+            )
+            img = requests.get(link)
             st.image(img)
             st.image(Image.open(place.photos[0]))
 
