@@ -116,8 +116,6 @@ def get_hospitals():
 
 
 def covid():
-    st.set_page_config(page_title="COVID-19 Predictor ", page_icon="")
-    st.markdown("# COVID-19  Predictor")
     col1, col2 = st.columns(2)
     breath = col1.selectbox("Do you have problems breathing?", ["Yes", "No"])
     fever = col1.selectbox("Do you have a fever?", ["Yes", "No"])
