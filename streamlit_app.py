@@ -58,12 +58,12 @@ def get_hospitals():
         "button_click",
         CustomJS(
             code="""
-	navigator.geolocation.getCurrentPosition(
-		(loc) => {
-			document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
-		}
-	)
-	"""
+				navigator.geolocation.getCurrentPosition(
+					(loc) => {
+						document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+					}
+				)
+			"""
         ),
     )
     response = streamlit_bokeh_events(
@@ -74,9 +74,6 @@ def get_hospitals():
         override_height=75,
         debounce_time=0,
     )
-    st.write(response)
-
-    st.write(f'(Location accurate to {response["accuracy"]/1609} miles.)\n')
     places = GooglePlaces(a)
     query_result = places.nearby_search(
         lat_lng={
