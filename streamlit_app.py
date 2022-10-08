@@ -46,35 +46,7 @@ def get_prediction(img):
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range = 10000  # in miles
-    # r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
-    apiKey = "9fe19182c5bf4d1bb105da08e593a578"
-    # print(len(County))
-    US_confirmed = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
-    confirmed = pd.read_csv(US_confirmed)
-    FIPSs = (
-        confirmed.groupby(["Province_State", "Admin2"])
-        .FIPS.unique()
-        .apply(pd.Series)
-        .reset_index()
-    )
-    FIPSs.columns = ["State", "County", "FIPS"]
-    FIPSs["FIPS"].fillna(0, inplace=True)
-    FIPSs["FIPS"] = FIPSs.FIPS.astype(int).astype(str).str.zfill(5)
-    CA_counties = (
-        confirmed[confirmed.Province_State == "California"].Admin2.unique().tolist()
-    )
-
-    County = st.multiselect("Select counties", CA_counties, default=["Yolo"])
-    f = FIPSs[FIPSs.County == County[0]].FIPS.values[0]
-    # print(f)
-    path1 = (
-        "https://data.covidactnow.org/latest/us/counties/"
-        + f
-        + ".OBSERVED_INTERVENTION.timeseries.json?apiKey="
-        + apiKey
-    )
-
-    r = requests.post(path1)
+    r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
     st.write(r)
     response = json.loads(r.content)
     st.write(response)
