@@ -81,7 +81,7 @@ def get_hospitals():
     query_result = places.nearby_search(
         lat_lng={
             "lat": response["GET_LOCATION"]["lat"],
-            "lng": response["GET_LOCATION"]["lng"],
+            "lng": response["GET_LOCATION"]["lon"],
         },
         radius=range * 1609,
         types=[types.TYPE_HOSPITAL],
