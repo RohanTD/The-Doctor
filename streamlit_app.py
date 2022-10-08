@@ -103,6 +103,7 @@ def get_hospitals():
             st.write(f"Address: {place.formatted_address}")
             st.write(f"Directions: {place.url}")
             st.write(f"Website: {place.website}")
+            st.write("\n")
 
 
 if __name__ == "__main__":
