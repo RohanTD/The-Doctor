@@ -11,6 +11,9 @@ import cv2
 import requests
 import json
 from googleplaces import GooglePlaces, types, lang
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
 
 """
 # Welcome to Streamlit!
@@ -46,9 +49,31 @@ def get_prediction(img):
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range = 10000  # in miles
-    r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
-    st.write(r)
-    response = json.loads(r.content)
+    # r = requests.post(f"https://www.googleapis.com/geolocation/v1/geolocate?key={a}")
+    # st.write(r)
+    # response = json.loads(r.content)
+    # st.write(response)
+    loc_button = Button(label="Get Location")
+    loc_button.js_on_event(
+        "button_click",
+        CustomJS(
+            code="""
+	navigator.geolocation.getCurrentPosition(
+		(loc) => {
+			document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+		}
+	)
+	"""
+        ),
+    )
+    response = streamlit_bokeh_events(
+        loc_button,
+        events="GET_LOCATION",
+        key="get_location",
+        refresh_on_update=False,
+        override_height=75,
+        debounce_time=0,
+    )
     st.write(response)
 
     st.write(f'(Location accurate to {response["accuracy"]/1609} miles.)\n')
