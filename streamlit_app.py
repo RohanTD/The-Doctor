@@ -101,7 +101,7 @@ def get_hospitals():
 
             st.subheader(f"{place.name}")
             # st.image(place.icon)
-            st.write(f"Phone: {place.formatted_phone_number}")
+            # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.vicinity}")
             st.write(f"Directions: {place.url}")
             st.write(f"Website: {place.website}")
