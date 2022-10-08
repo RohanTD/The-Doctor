@@ -48,7 +48,7 @@ def get_prediction(img):
 
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
-    range = 5  # in miles
+    range1 = 5  # in miles
     loc_button = Button(label="Allow Location Access")
     loc_button.js_on_event(
         "button_click",
@@ -77,14 +77,14 @@ def get_hospitals():
                 "lat": response["GET_LOCATION"]["lat"],
                 "lng": response["GET_LOCATION"]["lon"],
             },
-            radius=range * 1609,
+            radius=range1 * 1609,
             types=[types.TYPE_HOSPITAL],
         )
 
         if query_result.has_attributions:
             st.write(query_result.html_attributions)
         if len(query_result.places) == 0:
-            st.write(f"There are no hospitals in a {str(range)} mile proximity.")
+            st.write(f"There are no hospitals in a {str(range1)} mile proximity.")
 
         results = []
         for i, place in enumerate(query_result.places):
