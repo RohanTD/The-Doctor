@@ -103,7 +103,7 @@ def get_hospitals():
             k = int(place.rating) if place.rating != "" else 0
             m = range(k)
             for j in m:
-                st.image("star TP.png", width=20)
+                st.image(["star TP.png", "star TP.png", "star TP.png"], width=20)
             #  for j in range(int(place.rating)):
 
             # st.write(f"Rating: {place.rating}")
