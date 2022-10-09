@@ -19,7 +19,7 @@ al = st.number_input(
 su = st.number_input(
     "How severe is your sugar level?", value=0, max_value=5, min_value=0
 )
-rbc = st.checkbox("Are your red blood cells normal normal?")
+rbc = st.checkbox("Are your red blood cells normal?")
 pc = st.checkbox("Is your pus cell count normal?")
 pcc = st.checkbox("Are pus cell clumps present?")
 ba = st.checkbox("Are bacteria present?")
