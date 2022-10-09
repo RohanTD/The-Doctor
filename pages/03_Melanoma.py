@@ -52,22 +52,8 @@ def camMethod():
         getImage(Image.open(cam))
 
 
-placeholder = st.empty()
-
-camButton = placeholder.button("Take a picture instead")
-
-f2 = open("mode.txt", "w")
-if camButton:
-    f2.write("Take")
-    # camMethod()
-    placeholder.empty()
-
-f = open("mode.txt", "r")
-st.write(f.read() + "HI")
-if f.read() == "Take":
-    camMethod()
-else:
-    fileMethod()
+fileMethod()
+camMethod()
 
 
 # if st.button(" Take a picture instead"):
