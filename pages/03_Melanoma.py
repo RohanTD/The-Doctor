@@ -46,7 +46,7 @@ camHold = st.empty()
 
 def fileMethod():
     fileHold.subheader("Upload")
-    file2 = fileHold.file_uploader("Select from file directory")
+    file2 = fileHold.file_uploader("Upload an image")
     if file2:  # if user uploaded file
         camHold.empty()
         getImage(Image.open(file2))
@@ -54,7 +54,7 @@ def fileMethod():
 
 def camMethod():
     camHold.subheader("Take photo")
-    cam = camHold.camera_input("Please allow webcam access to the site")
+    cam = camHold.camera_input("Take a photo (please allow webcam access)")
     if cam is not None:
         fileHold.empty()
         getImage(Image.open(cam))
