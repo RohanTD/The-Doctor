@@ -58,6 +58,7 @@ if fileButton:
 elif camButton:
     cam = st.camera_input("Please allow camera access")
     while not cam:
-        pass
+        if cam is not None:
+            break
     if cam is not None:
         getImage(Image.open(cam))
