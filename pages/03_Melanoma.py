@@ -49,13 +49,11 @@ file = 0
 cam = 0
 if fileButton:
     file = placeholder.file_uploader("Upload an image")
+    if fileButton and file:  # if user uploaded file
+        getImage(Image.open(file))
 # if st.button("Take a picture instead"):
 #     placeholder.empty()
 elif camButton:
     cam = st.camera_input("Please allow camera access")
-
-if camButton and cam is not None:
-    getImage(Image.open(cam))
-
-if fileButton and file:  # if user uploaded file
-    getImage(Image.open(file))
+    if cam is not None:
+        getImage(Image.open(cam))
