@@ -70,5 +70,7 @@ if camButton:
     f2 = open("mode.txt", "w")
     if f.read() == "Upload":
         f2.write("Take")
+        camMethod()
     else:
         f2.write("Upload")
+        fileMethod()
