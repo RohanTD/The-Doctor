@@ -62,6 +62,7 @@ if camButton:
         # camMethod()
     else:
         f2.write("Upload")
+        st.button("refresh")
         # fileMethod()
 
 
