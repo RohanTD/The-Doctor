@@ -28,8 +28,7 @@ def covid():
         "Have you visited a public exposed place(EG: Pool) recently?"
     )
     family = col2.checkbox(
-        "Does anyone in your family work in a public exposed place(EG: Hospital) recently?",
-        ["Yes", "No"],
+        "Does anyone in your family work in a public exposed place(EG: Hospital) recently?"
     )
 
     # breath = col1.selectbox("Do you have problems breathing?", ["Yes", "No"])
@@ -99,7 +98,7 @@ def covid():
                 <h1 style="text-align: center;">&nbsp;</h1>""",
                 unsafe_allow_html=True,
             )
-    elif y_pred[0]==0:
+    elif y_pred[0] == 0:
         st.write(
             """<div style="text-align: center;">
             <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely DO NOT have COVID-19. If you are feeling similar symptoms, please get tested.</span></span></div>
