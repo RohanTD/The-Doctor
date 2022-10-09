@@ -40,17 +40,23 @@ def getImage(img):
         st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
 
 
+fileHold = st.empty()
+camHold = st.empty()
+
+
 def fileMethod():
-    st.subheader("Upload")
-    file2 = st.file_uploader("Select from file directory")
+    fileHold.subheader("Upload")
+    file2 = fileHold.file_uploader("Select from file directory")
     if file2:  # if user uploaded file
+        camHold.empty()
         getImage(Image.open(file2))
 
 
 def camMethod():
-    st.subheader("Take photo")
-    cam = st.camera_input("Please allow webcam access to the site")
+    camHold.subheader("Take photo")
+    cam = camHold.camera_input("Please allow webcam access to the site")
     if cam is not None:
+        fileHold.empty()
         getImage(Image.open(cam))
 
 
