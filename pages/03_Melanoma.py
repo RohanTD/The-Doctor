@@ -36,7 +36,7 @@ file = st.file_uploader("Upload An Image")
 cam = 0
 if st.button("Take a Picture Instead"):
     del file
-    cam = st.camera_input("Take a Picture", disabled=True)
+    cam = st.camera_input("Take a Picture")
 elif file:  # if user uploaded file
     d = st.button("Check if you have melanoma")
     if d:
