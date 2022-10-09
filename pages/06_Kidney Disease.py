@@ -45,7 +45,7 @@ ane = st.checkbox("Do you have anemia?")
 
 
 rf = joblib.load("kidney.joblib")
-input_arr = [
+input_arr = [0,
     age,
     bp,
     sg,
@@ -72,6 +72,7 @@ input_arr = [
     ane,
 ]
 symptoms = [
+    "id",
     "age",
     "bp",
     "sg",
