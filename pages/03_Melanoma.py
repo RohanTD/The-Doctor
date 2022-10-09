@@ -43,9 +43,9 @@ def getImage(img):
 
 
 def fileMethod():
-    file = st.file_uploader("Upload an image")
-    if file:  # if user uploaded file
-        getImage(Image.open(file))
+    file2 = st.file_uploader("Upload an image")
+    if file2:  # if user uploaded file
+        getImage(Image.open(file2))
 
 
 def camMethod():
