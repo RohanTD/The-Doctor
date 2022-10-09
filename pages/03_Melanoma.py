@@ -32,32 +32,30 @@ def get_prediction(img):
     return cnn.predict(arr)
 
 
+def getImage(img):
+    d = st.button("Check if you have melanoma")
+    if d:
+        prediction = get_prediction(img)
+        if prediction[0] < 0.5:
+            st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
+        else:
+            st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+
+
 fileButton = st.button("Upload an image")
 camButton = st.button("Take a picture")
 placeholder = st.empty()
-file=0
-cam=0
-if (fileButton):
+file = 0
+cam = 0
+if fileButton:
     file = placeholder.file_uploader("Upload an image")
 # if st.button("Take a picture instead"):
 #     placeholder.empty()
-if (camButton):
+elif camButton:
     cam = st.camera_input("Please allow camera access")
-if cam is not None:
-    d = st.button("Check if you have melanoma")
-    if d:
-        img = Image.open(cam)
-        prediction = get_prediction(img)
-        if prediction[0] < 0.5:
-            st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
-        else:
-            st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
-if file:  # if user uploaded file
-    d = st.button("Check if you have melanoma")
-    if d:
-        img = Image.open(file)
-        prediction = get_prediction(img)
-        if prediction[0] < 0.5:
-            st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
-        else:
-            st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+
+if camButton and cam is not None:
+    getImage(Image.open(cam))
+
+if fileButton and file:  # if user uploaded file
+    getImage(Image.open(file))
