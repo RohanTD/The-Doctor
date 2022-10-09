@@ -33,7 +33,6 @@ def get_prediction(img):
 
 
 f2 = open("mode.txt", "w")
-f = open("mode.txt", "r")
 
 
 def getImage(img):
@@ -42,10 +41,6 @@ def getImage(img):
         st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
         st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
-    f2.write("Upload")
-    f = open("mode.txt", "r")
-    st.write(f.read())
-    st.button("Refresh")
 
 
 def fileMethod():
