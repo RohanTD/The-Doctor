@@ -25,10 +25,10 @@ def covid():
         "Have you attended a large gathering in the last 14 days?"
     )
     public = col2.checkbox(
-        "Have you visited a public exposed place(EG: Pool) recently?"
+        "Have you visited a public, exposed place (e.g. a pool) recently?"
     )
     family = col2.checkbox(
-        "Does anyone in your family work in a public exposed place(EG: Hospital) recently?"
+        "Have you had contact with anyone in your family who works in a public, exposed place (e.g. a hospital) recently?"
     )
 
     # breath = col1.selectbox("Do you have problems breathing?", ["Yes", "No"])
