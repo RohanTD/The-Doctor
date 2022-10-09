@@ -54,12 +54,11 @@ def camMethod():
         getImage(Image.open(cam))
 
 
-fileButton = st.button("Upload an image")
 camButton = st.button("Take a picture")
-if fileButton:
-    fileMethod()
 
 # if st.button("Take a picture instead"):
 #     placeholder.empty()
 if camButton:
     camMethod()
+else:
+    fileMethod()
