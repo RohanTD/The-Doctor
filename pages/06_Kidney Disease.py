@@ -36,7 +36,7 @@ htn = st.checkbox("Do you have hypertension?")
 dm = st.checkbox("Do you have diabetes mellitus?")
 cad = st.checkbox("Do you have coronary artery disease?")
 appet = st.selectbox("How is your appetite?", ["Good", "Poor"])
-if appet="Good":
+if appet=="Good":
     appet =1
 else:
     appet=0
