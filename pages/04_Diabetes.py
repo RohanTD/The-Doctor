@@ -8,7 +8,7 @@ st.sidebar.markdown("# Diabetes  Predictor")
 st.write("Input your symptoms below")
 
 col1, col2 = st.columns(2)
-age = col1.number_input("How old are you?")
+age = col1.number_input("How old are you?", value=20)
 gender = col1.selectbox("What is your gender?", ["Male", "Female"])
 polyuria = col1.checkbox("Polyuria?")
 polydipsia = col1.checkbox("Polydipsia?")
