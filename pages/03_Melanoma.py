@@ -32,11 +32,17 @@ def get_prediction(img):
     return cnn.predict(arr)
 
 
+fileButton = st.button("Upload an image")
+camButton = st.button("Take a picture")
 placeholder = st.empty()
-file = placeholder.file_uploader("Upload an image")
+file=0
+cam=0
+if (fileButton):
+    file = placeholder.file_uploader("Upload an image")
 # if st.button("Take a picture instead"):
 #     placeholder.empty()
-cam = st.camera_input("Please allow camera access")
+if (camButton):
+    cam = st.camera_input("Please allow camera access")
 if cam is not None:
     d = st.button("Check if you have melanoma")
     if d:
