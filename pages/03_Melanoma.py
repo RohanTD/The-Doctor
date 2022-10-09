@@ -54,16 +54,17 @@ def camMethod():
 
 fileHold = st.empty()
 camHold = st.empty()
-f = open("mode.txt", "w")
+f = open("mode.txt", "r")
+f2 = open("mode.txt", "w")
 camButton = camHold.button("Take a picture")
 fileButton = fileHold.button("Upload an image")
 
 if camButton:
-    f.write("Take")
+    f2.write("Take")
     camHold.empty()
     # camMethod()
 if fileButton:
-    f.write("Upload")
+    f2.write("Upload")
     fileHold.empty()
     # fileMethod()
 
