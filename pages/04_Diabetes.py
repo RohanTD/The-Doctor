@@ -7,16 +7,17 @@ st.markdown("# Diabetes  Predictor")
 st.sidebar.markdown("# Diabetes  Predictor")
 st.write("Input your symptoms below")
 
+
+age = st.number_input("How old are you?", value=20)
+gender = st.selectbox("What is your gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
-age = col1.number_input("How old are you?", value=20)
-gender = col1.selectbox("What is your gender?", ["Male", "Female"])
 polyuria = col1.checkbox("Polyuria?")
 polydipsia = col1.checkbox("Polydipsia?")
 weight = col1.checkbox("Sudden weight loss?")
 weakness = col1.checkbox("Weakness?")
 polyphagia = col1.checkbox("Polyphagia?")
 thrush = col1.checkbox("Genital thrush?")
-blurring = col2.checkbox("Blurred vision?")
+blurring = col1.checkbox("Blurred vision?")
 itching = col2.checkbox("Itching?")
 irritability = col2.checkbox("Irritability?")
 healing = col2.checkbox("Delayed healing?")
@@ -75,6 +76,6 @@ for i in range(2, len(input_arr)):
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
-        st.write("You have diabetes")
+        st.write("You likely have diabetes")
     else:
-        st.write("You do not have diabetes")
+        st.write("You likely do not have diabetes")
