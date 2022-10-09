@@ -31,6 +31,27 @@ def covid():
         "Does anyone in your family work in a public exposed place(EG: Hospital) recently?",
         ["Yes", "No"],
     )
+
+    # breath = col1.selectbox("Do you have problems breathing?", ["Yes", "No"])
+    # fever = col1.selectbox("Do you have a fever?", ["Yes", "No"])
+    # dry_cough = col1.selectbox("Do you have dry cough?", ["Yes", "No"])
+    # sore_throat = col1.selectbox("Do you have a sore throat?", ["Yes", "No"])
+    # hypertension = col1.selectbox("Do you have hypertension?", ["Yes", "No"])
+    # fatigue = col1.selectbox("Do you experience fatigue?", ["Yes", "No"])
+    # travel = col2.selectbox("Have you traveled abroad recently?", ["Yes", "No"])
+    # contact = col2.selectbox(
+    #     "Have you had contact with a COVID patient in the last 14 days?", ["Yes", "No"]
+    # )
+    # gathering = col2.selectbox(
+    #     "Have you attended a large gathering in the last 14 days?", ["Yes", "No"]
+    # )
+    # public = col2.selectbox(
+    #     "Have you visited a public exposed place(EG: Pool) recently?", ["Yes", "No"]
+    # )
+    # family = col2.selectbox(
+    #     "Does anyone in your family work in a public exposed place(EG: Hospital) recently?",
+    #     ["Yes", "No"],
+    # )
     model = joblib.load("covid.pkl")
     input_arr = [
         breath,
