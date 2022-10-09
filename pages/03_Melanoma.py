@@ -54,6 +54,7 @@ def camMethod():
         getImage(Image.open(cam))
 
 
+f = open("mode.txt", "r")
 camButton = st.button("Take a picture")
 
 if camButton:
@@ -66,7 +67,6 @@ if camButton:
         # fileMethod()
 
 
-f = open("mode.txt", "r")
 if f.read() == "Upload":
     fileMethod()
 else:
