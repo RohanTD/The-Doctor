@@ -65,7 +65,7 @@ if camButton:
     placeholder.empty()
 
 f = open("mode.txt", "r")
-st.write(f.read())
+st.write(f.read() + "HI")
 if f.read() == "Upload":
     fileMethod()
 else:
