@@ -69,6 +69,7 @@ if fileButton:
     fileHold.empty()
     # fileMethod()
 
+st.write(f.read())
 
 if f.read() == "Upload":
     fileMethod()
