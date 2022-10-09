@@ -55,10 +55,10 @@ def camMethod():
 
 
 camButton = st.button("Take a picture")
-
 # if st.button("Take a picture instead"):
 #     placeholder.empty()
 if camButton:
     camMethod()
+    st.stop()
 else:
     fileMethod()
