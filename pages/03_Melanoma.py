@@ -41,13 +41,15 @@ def getImage(img):
 
 
 def fileMethod():
-    file2 = st.file_uploader("Upload an image")
+    st.subheader("Upload")
+    file2 = st.file_uploader("Select from file directory")
     if file2:  # if user uploaded file
         getImage(Image.open(file2))
 
 
 def camMethod():
-    cam = st.camera_input("Please allow camera access")
+    st.subheader("Take photo")
+    cam = st.camera_input("Please allow webcam access to the site")
     if cam is not None:
         getImage(Image.open(cam))
 
