@@ -11,23 +11,23 @@ st.write("Input your symptoms below")
 
 def covid():
     col1, col2 = st.columns(2)
-    breath = col1.selectbox("Do you have problems breathing?", ["Yes", "No"])
-    fever = col1.selectbox("Do you have a fever?", ["Yes", "No"])
-    dry_cough = col1.selectbox("Do you have dry cough?", ["Yes", "No"])
-    sore_throat = col1.selectbox("Do you have a sore throat?", ["Yes", "No"])
-    hypertension = col1.selectbox("Do you have hypertension?", ["Yes", "No"])
-    fatigue = col1.selectbox("Do you experience fatigue?", ["Yes", "No"])
-    travel = col2.selectbox("Have you traveled abroad recently?", ["Yes", "No"])
-    contact = col2.selectbox(
-        "Have you had contact with a COVID patient in the last 14 days?", ["Yes", "No"]
+    breath = col1.checkbox("Do you have problems breathing?")
+    fever = col1.checkbox("Do you have a fever?")
+    dry_cough = col1.checkbox("Do you have dry cough?")
+    sore_throat = col1.checkbox("Do you have a sore throat?")
+    hypertension = col1.checkbox("Do you have hypertension?")
+    fatigue = col1.checkbox("Do you experience fatigue?")
+    travel = col2.checkbox("Have you traveled abroad recently?")
+    contact = col2.checkbox(
+        "Have you had contact with a COVID patient in the last 14 days?"
     )
-    gathering = col2.selectbox(
-        "Have you attended a large gathering in the last 14 days?", ["Yes", "No"]
+    gathering = col2.checkbox(
+        "Have you attended a large gathering in the last 14 days?"
     )
-    public = col2.selectbox(
-        "Have you visited a public exposed place(EG: Pool) recently?", ["Yes", "No"]
+    public = col2.checkbox(
+        "Have you visited a public exposed place(EG: Pool) recently?"
     )
-    family = col2.selectbox(
+    family = col2.checkbox(
         "Does anyone in your family work in a public exposed place(EG: Hospital) recently?",
         ["Yes", "No"],
     )
@@ -60,7 +60,7 @@ def covid():
     ]
 
     for i in range(len(input_arr)):
-        if input_arr[i] == "Yes":
+        if input_arr[i]:
             input_arr[i] = 1
         else:
             input_arr[i] = 0
