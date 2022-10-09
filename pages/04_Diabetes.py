@@ -72,8 +72,8 @@ for i in range(2, len(input_arr)):
         input_arr[i] = 1
     else:
         input_arr[i] = 0
-pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
 if st.button("Predict"):
+    pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
         st.write("You have diabetes")
     else:
