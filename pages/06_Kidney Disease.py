@@ -35,6 +35,10 @@ rc = st.number_input("What is your red blood cell count?", value=4, step=0.1)
 htn = st.checkbox("Do you have hypertension?")
 dm = st.checkbox("Do you have diabetes mellitus?")
 cad = st.checkbox("Do you have coronary artery disease?")
+appet = st.selectbox("How is your appetite?", ["Good", "Poor"])
+pe = st.checkbox("Do you have pedal edema?")
+ane = st.checkbox("Do you have anemia?")
+
 
 rf = joblib.load("kidney.joblib")
 input_arr = [
@@ -64,7 +68,30 @@ input_arr = [
     ane,
 ]
 symptoms = [
-    # ADD THESE
+    "age",
+    "bp",
+    "sg",
+    "al",
+    "su",
+    "rbc",
+    "pc",
+    "pcc",
+    "ba",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wc",
+    "rc",
+    "htn",
+    "dm",
+    "cad",
+    "appet",
+    "pe",
+    "ane",
 ]
 
 # ADD ENCODING (TEXT -> NUMBERS)
