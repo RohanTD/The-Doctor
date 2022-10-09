@@ -33,6 +33,7 @@ def get_prediction(img):
 
 
 f2 = open("mode.txt", "w")
+f = open("mode.txt", "r")
 
 
 def getImage(img):
@@ -42,6 +43,8 @@ def getImage(img):
     else:
         st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
     f2.write("Upload")
+    st.write(f.read())
+    st.button("Refresh")
 
 
 def fileMethod():
@@ -65,7 +68,7 @@ if camButton:
     # camMethod()
     placeholder.empty()
 
-
+st.write(f.read())
 if f.read() == "Upload":
     fileMethod()
 else:
