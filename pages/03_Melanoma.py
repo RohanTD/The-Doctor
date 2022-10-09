@@ -66,4 +66,9 @@ camButton = st.button("Take a picture")
 #     placeholder.empty()
 if camButton:
     f2 = open("mode.txt", "w")
-    f2.write("Take")
+    if f.read() == "Upload":
+        f2.write("Take")
+        camMethod()
+    else:
+        f2.write("Upload")
+        fileMethod()
