@@ -61,12 +61,12 @@ fileButton = fileHold.button("Upload an image")
 if camButton:
     f2 = open("mode.txt", "w")
     f2.write("Take")
-    fileHold.empty()
+    camHold.empty()
     # camMethod()
 if fileButton:
     f2 = open("mode.txt", "w")
     f2.write("Upload")
-    camHold.empty()
+    fileHold.empty()
     # fileMethod()
 
 
