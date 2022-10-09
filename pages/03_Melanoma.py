@@ -58,19 +58,12 @@ camButton = 0
 f = open("mode.txt", "r")
 if f.read() == "Upload":
     fileMethod()
-    camButton = st.button("Take a picture")
 else:
     camMethod()
-    camButton = st.button("Upload a picture")
 
-
+camButton = st.button("Take a picture")
 # if st.button(" Take a picture instead"):
 #     placeholder.empty()
 if camButton:
     f2 = open("mode.txt", "w")
-    if f.read() == "Upload":
-        f2.write("Take")
-        camMethod()
-    else:
-        f2.write("Upload")
-        fileMethod()
+    f2.write("Take")
