@@ -32,12 +32,16 @@ def get_prediction(img):
     return cnn.predict(arr)
 
 
+f2 = open("mode.txt", "w")
+
+
 def getImage(img):
     prediction = get_prediction(img)
     if prediction[0] < 0.5:
         st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
         st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+    f2.write("Upload")
 
 
 def fileMethod():
@@ -57,7 +61,6 @@ f = open("mode.txt", "r")
 camButton = placeholder.button("Take a picture instead")
 
 if camButton:
-    f2 = open("mode.txt", "w")
     f2.write("Take")
     # camMethod()
     placeholder.empty()
