@@ -42,23 +42,24 @@ def getImage(img):
             st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
 
 
-fileButton = st.button("Upload an image")
-camButton = st.button("Take a picture")
-placeholder = st.empty()
-file = 0
-cam = 0
-if fileButton:
-    file = placeholder.file_uploader("Upload an image")
-    while not file:
-        pass
+def fileMethod():
+    file = st.file_uploader("Upload an image")
     if file:  # if user uploaded file
         getImage(Image.open(file))
-# if st.button("Take a picture instead"):
-#     placeholder.empty()
-elif camButton:
+
+
+def camMethod():
     cam = st.camera_input("Please allow camera access")
-    while not cam:
-        if cam is not None:
-            break
     if cam is not None:
         getImage(Image.open(cam))
+
+
+fileButton = st.button("Upload an image")
+camButton = st.button("Take a picture")
+if fileButton:
+    fileMethod()
+
+# if st.button("Take a picture instead"):
+#     placeholder.empty()
+if camButton:
+    camMethod()
