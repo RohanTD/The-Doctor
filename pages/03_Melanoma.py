@@ -34,22 +34,18 @@ def get_prediction(img):
 
 placeholder = st.empty()
 file = placeholder.file_uploader("Upload an image")
-if st.button("Take a picture instead"):
-    placeholder.empty()
-    cam = st.camera_input("Please allow camera access")
-    if cam is not None:
-        d = st.button("Check if you have melanoma")
-        if d:
-            img = Image.open(cam)
-            prediction = get_prediction(img)
-            if prediction[0] < 0.5:
-                st.write(
-                    "Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%"
-                )
-            else:
-                st.write(
-                    "Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%"
-                )
+# if st.button("Take a picture instead"):
+#     placeholder.empty()
+cam = st.camera_input("Please allow camera access")
+if cam is not None:
+    d = st.button("Check if you have melanoma")
+    if d:
+        img = Image.open(cam)
+        prediction = get_prediction(img)
+        if prediction[0] < 0.5:
+            st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
+        else:
+            st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
 if file:  # if user uploaded file
     d = st.button("Check if you have melanoma")
     if d:
