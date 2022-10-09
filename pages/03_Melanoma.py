@@ -32,9 +32,6 @@ def get_prediction(img):
     return cnn.predict(arr)
 
 
-f2 = open("mode.txt", "w")
-
-
 def getImage(img):
     prediction = get_prediction(img)
     if prediction[0] < 0.5:
@@ -59,6 +56,7 @@ placeholder = st.empty()
 
 camButton = placeholder.button("Take a picture instead")
 
+f2 = open("mode.txt", "w")
 if camButton:
     f2.write("Take")
     # camMethod()
