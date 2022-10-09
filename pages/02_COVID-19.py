@@ -17,7 +17,7 @@ def covid():
     sore_throat = col1.checkbox("Do you have a sore throat?")
     hypertension = col1.checkbox("Do you have hypertension?")
     fatigue = col1.checkbox("Do you experience fatigue?")
-    travel = col2.checkbox("Have you traveled abroad recently?")
+    travel = col1.checkbox("Have you traveled abroad recently?")
     contact = col2.checkbox(
         "Have you had contact with a COVID patient in the last 14 days?"
     )
