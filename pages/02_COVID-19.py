@@ -98,27 +98,27 @@ def covid():
                 <h1 style="text-align: center;">&nbsp;</h1>""",
                 unsafe_allow_html=True,
             )
-    elif y_pred[0] == 0:
-        st.write(
-            """<div style="text-align: center;">
-            <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely DO NOT have COVID-19. If you are feeling similar symptoms, please get tested.</span></span></div>
-            <h1>&nbsp;</h1>
-            <p>&nbsp;</p>
-            <p><strong>If concerned, there are several ways you can reduce your risk of developing COVID-19, such as:</strong></p>
-            <p style="text-align: left;"><span> 1. Giving up and/or avoiding smoking and tobacco.</span></p>
-            <p style="text-align: left;"><span> 2. Clean your hands often. Use soap and water, or an alcohol-based hand rub. </span></p>
-            <p style="text-align: left;"><span>3. Get vaccinated. Follow local guidance about vaccination.</span></p>
-            <p style="text-align: left;"><span> 4. Cover your nose and mouth with your bent elbow or tissue when you cough/sneeze.</span></p>
-            <p style="text-align: left;"><span> 5. Stay home if you feel unwell. Open a window if indoors.</span></p>
-            <p style="text-align: left;"><span> 6. Wear a mask in public, especially indoors or when physical distancing is not possible.</span></p>
-            <p style="text-align: left;"><span>7. Maintain a safe distance from others (at least 1 meter), even if they don&rsquo;t appear to be sick.</span></p>
-            <p>&nbsp;</p>
-            <p><span style="background-color: #cc99ff;"><strong>There have been approximately 553,850,467 cases of COVID-19 worldwide and 6,363,448 total deaths.</strong></span></p>
-            <p>&nbsp;</p>
-            <p><em>Luckily there are numerous things we can do to help reduce the spread and avoid serious illness and death. Effective actions like getting the COVID-19 vaccine and a booster shot, wearing a mask, avoiding crowds and indoor places and washing hands often all contribute to fighting the virus.</em></p>
-            </div>""",
-            unsafe_allow_html=True,
-        )
+        elif y_pred[0] == 0:
+            st.write(
+                """<div style="text-align: center;">
+                <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely DO NOT have COVID-19. If you are feeling similar symptoms, please get tested.</span></span></div>
+                <h1>&nbsp;</h1>
+                <p>&nbsp;</p>
+                <p><strong>If concerned, there are several ways you can reduce your risk of developing COVID-19, such as:</strong></p>
+                <p style="text-align: left;"><span> 1. Giving up and/or avoiding smoking and tobacco.</span></p>
+                <p style="text-align: left;"><span> 2. Clean your hands often. Use soap and water, or an alcohol-based hand rub. </span></p>
+                <p style="text-align: left;"><span>3. Get vaccinated. Follow local guidance about vaccination.</span></p>
+                <p style="text-align: left;"><span> 4. Cover your nose and mouth with your bent elbow or tissue when you cough/sneeze.</span></p>
+                <p style="text-align: left;"><span> 5. Stay home if you feel unwell. Open a window if indoors.</span></p>
+                <p style="text-align: left;"><span> 6. Wear a mask in public, especially indoors or when physical distancing is not possible.</span></p>
+                <p style="text-align: left;"><span>7. Maintain a safe distance from others (at least 1 meter), even if they don&rsquo;t appear to be sick.</span></p>
+                <p>&nbsp;</p>
+                <p><span style="background-color: #cc99ff;"><strong>There have been approximately 553,850,467 cases of COVID-19 worldwide and 6,363,448 total deaths.</strong></span></p>
+                <p>&nbsp;</p>
+                <p><em>Luckily there are numerous things we can do to help reduce the spread and avoid serious illness and death. Effective actions like getting the COVID-19 vaccine and a booster shot, wearing a mask, avoiding crowds and indoor places and washing hands often all contribute to fighting the virus.</em></p>
+                </div>""",
+                unsafe_allow_html=True,
+            )
 
 
 covid()
