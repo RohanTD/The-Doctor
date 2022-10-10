@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import pickle
 
-st.set_page_config(page_title="Kidney Disease Predictor", page_icon=NULL)
+st.set_page_config(page_title="Kidney Disease Predictor", page_icon="")
 st.markdown("# Kidney Disease  Predictor")
 st.write(
     "Input your symptoms below - if you do not know the answer to any numerical input question, please input a value of -1"
