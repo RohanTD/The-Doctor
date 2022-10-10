@@ -173,9 +173,9 @@ for i in range(len(symptoms)):
     pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
     lb = pickle.load(pkl_file)
     pkl_file.close()
-    st.write("kidney_" + symptoms[i] + ".pkl")
+    # st.write("kidney_" + symptoms[i] + ".pkl")
     lb_name_mapping = dict(zip(lb.classes_, lb.transform(lb.classes_)))
-    st.write(lb_name_mapping)
+    # st.write(lb_name_mapping)
     input_arr[i] = lb.transform([input_arr[i]])[0]
 
 
