@@ -128,7 +128,7 @@ pkl_file = open("heart.pkl", "rb")
 lbl = pickle.load(pkl_file)
 pkl_file.close()
 
-for i in symptoms:
+for i in range(len(symptoms)):
     input_arr[i] = lbl.transform(input_arr[i])
 
 if st.button("Predict"):
