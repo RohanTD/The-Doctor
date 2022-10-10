@@ -45,10 +45,10 @@ if pcc == "Yes":
 elif pcc == "No":
     pcc = "notpresent"
 ba = st.selectbox("Are bacteria present?", ["Yes", "No"])
-if ba == "present":
-    ba = 1
-elif ba == "notpresent":
-    ba = 0
+if ba == "Yes":
+    ba = "present"
+elif ba == "No":
+    ba = "notpresent"
 bgr = st.number_input("What is your blood glucose level?", value=-1, min_value=-1)
 bu = st.number_input("What is your blood urea level?", value=-1, min_value=-1)
 sc = st.number_input("What is your serum creatinine level?", step=0.1, min_value=-1.0)
