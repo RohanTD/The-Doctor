@@ -11,11 +11,29 @@ st.markdown("# Disease  Predictor")
 st.write(
     "Upload an image of the suspected cancerous area. For best results, be sure that the growth is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair"
 )
+# def get_prediction(img):
+#     img = cv2.resize(img,(128,128))
+#     img = np.reshape(img,[1,128,128,3])
+#     cnn = load_model("lyme.hdf5")
+#     return cnn.predict(img)
+
 def get_prediction(img):
-    img = cv2.resize(img,(128,128))
-    img = np.reshape(img,[1,128,128,3])
+    dimension = 128
+    channels = 3
+
+    img = img.convert("RGB")
+    img = np.asarray(img)
+    arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
+    image = img
+
+    size = (dimension, dimension)
+    image = cv2.resize(image, size)
+
+#     image_array = np.asarray(image)
+#     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
+
     cnn = load_model("lyme.hdf5")
-    return cnn.predict(img)
+    return cnn.predict(arr)
 
 def getImage(img):
     
