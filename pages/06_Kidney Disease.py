@@ -173,7 +173,7 @@ for i in range(len(symptoms)):
     pkl_file.close()
     st.write("kidney_" + symptoms[i] + ".pkl")
     lb_name_mapping = dict(zip(lb.classes_, lb.transform(lb.classes_)))
-    print(lb_name_mapping)
+    st.write(lb_name_mapping)
     input_arr[i] = lb.transform([input_arr[i]])[0]
 
 
