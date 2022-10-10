@@ -19,10 +19,10 @@ sg = st.selectbox(
 if sg == "Don't know":
     sg = -1.000
 al = st.number_input(
-    "How severe is your albumin level?", value=-1, max_value=5, min_value=-1
+    "How severe is your albumin level?", value=-1.0, max_value=5.0, min_value=-1.0
 )
 su = st.number_input(
-    "How severe is your sugar level?", value=-1, max_value=5, min_value=-1
+    "How severe is your sugar level?", value=-1.0, max_value=5.0, min_value=-1.0
 )
 rbc = st.selectbox("Are your red blood cells normal?", ["Yes", "No", "Don't know"])
 if rbc == "Yes":
@@ -48,17 +48,17 @@ if ba == "Yes":
     ba = "present"
 elif ba == "No":
     ba = "notpresent"
-bgr = st.number_input("What is your blood glucose level?", value=-1, min_value=-1)
-bu = st.number_input("What is your blood urea level?", value=-1, min_value=-1)
+bgr = st.number_input("What is your blood glucose level?", value=-1.0, min_value=-1.0)
+bu = st.number_input("What is your blood urea level?", value=-1.0, min_value=-1.0)
 sc = st.number_input("What is your serum creatinine level?", step=0.1, min_value=-1.0)
-sod = st.number_input("What is your sodium level?", value=-1, min_value=-1)
+sod = st.number_input("What is your sodium level?", value=-1.0, min_value=-1.0)
 pot = st.number_input(
     "What is your potassium level?", value=4.0, step=0.1, min_value=-1.0
 )
 hemo = st.number_input(
     "What is your hemoglobin level?", value=10.0, step=0.1, min_value=-1.0
 )
-pcv = st.number_input("What is your packed cell volume?", value=-1, min_value=-1)
+pcv = st.number_input("What is your packed cell volume?", value=-1.0, min_value=-1.0)
 wc = st.number_input(
     "What is your white blood cell count?", value=10000, step=100, min_value=-1
 )
@@ -163,9 +163,9 @@ symptoms = [
     "ane",
 ]
 
-# for i in range(len(input_arr)):
-#     if i in [1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
-#         input_arr[i] = float(input_arr[i])
+for i in range(len(input_arr)):
+    if i in [1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
+        input_arr[i] = float(input_arr[i])
 
 for i in range(len(symptoms)):
     pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
