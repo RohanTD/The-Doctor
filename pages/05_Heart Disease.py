@@ -5,7 +5,6 @@ import pickle
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="")
 st.markdown("# Heart Disease  Predictor")
-st.sidebar.markdown("# Heart Disease  Predictor")
 st.write("Input your symptoms below")
 
 col1, col2 = st.columns(2)
