@@ -169,10 +169,13 @@ symptoms = [
 
 for i in range(len(symptoms)):
     pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
-    lbl = pickle.load(pkl_file)
+    lb = pickle.load(pkl_file)
     pkl_file.close()
     st.write("kidney_" + symptoms[i] + ".pkl")
-    input_arr[i] = lbl.transform([input_arr[i]])[0]
+    lb_name_mapping = dict(zip(lb.classes_, lb.transform(lb.classes_)))
+    print(lb_name_mapping)
+    input_arr[i] = lb.transform([input_arr[i]])[0]
+
 
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
