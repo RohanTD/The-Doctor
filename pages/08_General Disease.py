@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.svm import SVC
-st.set_page(page_title='General Disease Predictor', page_icon = "")
+st.set_page_config(page_title='General Disease Predictor', page_icon = "")
 model = pickle.load(open("gendisease.sav", 'rb'))
 
 symptoms = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills', 'joint_pain',
