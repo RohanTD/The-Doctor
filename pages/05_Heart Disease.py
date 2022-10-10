@@ -129,7 +129,7 @@ lbl = pickle.load(pkl_file)
 pkl_file.close()
 
 for i in range(len(symptoms)):
-    input_arr[i] = lbl.transform(input_arr[i])
+    input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]

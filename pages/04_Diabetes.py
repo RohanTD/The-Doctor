@@ -65,9 +65,6 @@ symptoms = [
     "Obesity",
 ]
 
-pkl_file = open("diabetes.pkl", "rb")
-lbl = pickle.load(pkl_file)
-pkl_file.close()
 
 for i in range(2, len(input_arr)):
     if input_arr[i]:
@@ -75,7 +72,10 @@ for i in range(2, len(input_arr)):
     else:
         input_arr[i] = "No"
 
-for i in symptoms:
+for i in range(len(symptoms)):
+    pkl_file = open("diabetes_" + symptoms[i] + ".pkl", "rb")
+    lbl = pickle.load(pkl_file)
+    pkl_file.close()
     input_arr[i] = lbl.transform(input_arr[i])
 
 if st.button("Predict"):
