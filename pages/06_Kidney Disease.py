@@ -166,6 +166,7 @@ symptoms = [
 
 for i in range(len(input_arr)):
     if i == 1 or 3 or 4 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 16 or 17:
+        st.write(input_arr[i])
         if input_arr[i] == -1:
             input_arr[i] = nan
         else:
