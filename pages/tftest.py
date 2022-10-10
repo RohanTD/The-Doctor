@@ -63,7 +63,7 @@ def camMethod():
     cam = camHold.camera_input("Take a photo (please allow webcam access)")
     if cam is not None:
         fileHold.empty()
-        getImage(Image.open(cam))
+        getImage(cam)
 
 
 fileMethod()
