@@ -171,6 +171,7 @@ for i in range(len(symptoms)):
     pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
+    st.write(symptoms[i])
     input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):
