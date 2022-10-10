@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import pickle
 
-st.set_page_config(page_title="Kidney Disease Predictor", page_icon="")
+st.set_page_config(page_title="Kidney Disease Predictor", page_icon=None)
 st.markdown("# Kidney Disease  Predictor")
 st.write(
     "Input your symptoms below - if you do not know the answer to any numerical input question, please input a value of -1"
@@ -17,7 +17,7 @@ sg = st.selectbox(
     [1.005, 1.010, 1.015, 1.020, 1.025, "Don't know"],
 )
 if sg == "Don't know":
-    sg = ""
+    sg = None
 al = st.number_input(
     "How severe is your albumin level?", value=-1, max_value=5, min_value=-1
 )
@@ -30,14 +30,14 @@ if rbc == "Yes":
 elif rbc == "No":
     rbc = "abnormal"
 else:
-    rbc = ""
+    rbc = None
 pc = st.selectbox("Is your pus cell count normal?", ["Yes", "No", "Don't know"])
 if pc == "Yes":
     pc = "normal"
 elif pc == "No":
     pc = "abnormal"
 else:
-    pc = ""
+    pc = None
 pcc = st.selectbox("Are pus cell clumps present?", ["Yes", "No"])
 if pcc == "Yes":
     pcc = "present"
@@ -71,42 +71,42 @@ if htn == "Yes":
 elif htn == "No":
     htn = "no"
 else:
-    htn = ""
+    htn = None
 dm = st.selectbox("Do you have diabetes mellitus?", ["Yes", "No", "Don't know"])
 if dm == "Yes":
     dm = "yes"
 elif dm == "No":
     dm = "no"
 else:
-    dm = ""
+    dm = None
 cad = st.selectbox("Do you have coronary artery disease?", ["Yes", "No", "Don't know"])
 if cad == "Yes":
     cad = "yes"
 elif cad == "No":
     cad = "no"
 else:
-    cad = ""
+    cad = None
 appet = st.selectbox("How is your appetite?", ["Good", "Poor", "Don't Know"])
 if appet == "Good":
     appet = "good"
 elif appet == "Poor":
     appet = "poor"
 else:
-    appet = ""
+    appet = None
 pe = st.selectbox("Do you have pedal edema?", ["Yes", "No", "Don't know"])
 if pe == "Yes":
     pe = "yes"
 elif pe == "No":
     pe = "no"
 else:
-    pe = ""
+    pe = None
 ane = st.selectbox("Do you have anemia?", ["Yes", "No", "Don't know"])
 if ane == "Yes":
     ane = "yes"
 elif ane == "No":
     ane = "no"
 else:
-    ane = ""
+    ane = None
 
 
 rf = joblib.load("kidney.joblib")
@@ -167,7 +167,7 @@ for i in range(len(input_arr)):
     if i in [1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
         st.write(input_arr[i])
         if input_arr[i] == -1:
-            input_arr[i] = ""
+            input_arr[i] = None
         else:
             input_arr[i] = float(input_arr[i])
 
