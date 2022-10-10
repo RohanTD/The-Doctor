@@ -21,12 +21,10 @@ def get_prediction(img):
     st.write(type(img))
     dimension = 128
     channels = 3
-
-    img = img.convert("RGB")
     img = np.asarray(img)
+    st.write(type(img))
     arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
     image = img
-
     size = (dimension, dimension)
     image = cv2.resize(image, size)
 
@@ -63,7 +61,7 @@ def camMethod():
     cam = camHold.camera_input("Take a photo (please allow webcam access)")
     if cam is not None:
         fileHold.empty()
-        getImage(cam)
+        getImage(Image.open(cam))
 
 
 fileMethod()
