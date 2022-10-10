@@ -124,11 +124,10 @@ for i in [5, 8, 9]:
     else:
         input_arr[i] = 0
 
-pkl_file = open("heart.pkl", "rb")
-lbl = pickle.load(pkl_file)
-pkl_file.close()
-
 for i in range(len(symptoms)):
+    pkl_file = open("heart_" + symptoms[i] + ".pkl", "rb")
+    lbl = pickle.load(pkl_file)
+    pkl_file.close()
     input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):

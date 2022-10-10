@@ -171,12 +171,11 @@ for i in range(len(input_arr)):
         else:
             input_arr[i] = float(input_arr[i])
 
-pkl_file = open("kidney.pkl", "rb")
-lbl = pickle.load(pkl_file)
-pkl_file.close()
-
-for i in symptoms:
-    input_arr[i] = lbl.transform(input_arr[i])
+for i in range(len(symptoms)):
+    pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
+    lbl = pickle.load(pkl_file)
+    pkl_file.close()
+    input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
