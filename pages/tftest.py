@@ -38,6 +38,7 @@ def get_prediction(img):
 def getImage(img):
     
     prediction = get_prediction(img)
+    st.write(prediction)
     if prediction[0] < 0.9:
         st.write("Normal Rash") #- Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
