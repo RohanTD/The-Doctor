@@ -23,10 +23,11 @@ def get_prediction(img):
     channels = 3
     img = np.asarray(img)
     st.write(type(img))
-    arr = np.ndarray(shape=(1, dimension, dimension, channels), dtype=np.float32)
-    image = img
     size = (dimension, dimension)
-    image = cv2.resize(image, size)
+    img = cv2.resize(img, size)
+    arr = np.reshape(shape=(1, dimension, dimension, channels))
+    
+    
 
 #     image_array = np.asarray(image)
 #     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
