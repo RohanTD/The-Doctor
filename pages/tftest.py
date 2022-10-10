@@ -18,6 +18,7 @@ st.write(
 #     return cnn.predict(img)
 
 def get_prediction(img):
+    st.write(type(img))
     dimension = 128
     channels = 3
 
