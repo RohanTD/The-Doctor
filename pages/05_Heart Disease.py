@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import pickle
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="")
 st.markdown("# Heart Disease  Predictor")
@@ -123,6 +124,14 @@ for i in [5, 8, 9]:
         input_arr[i] = 1
     else:
         input_arr[i] = 0
+
+pkl_file = open("heart.pkl", "rb")
+lbl = pickle.load(pkl_file)
+pkl_file.close()
+
+for i in symptoms:
+    input_arr[i] = lbl.transform(input_arr[i])
+
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:

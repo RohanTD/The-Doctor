@@ -1,6 +1,8 @@
 import streamlit as st
+from cmath import nan
 import joblib
 import pandas as pd
+import pickle
 
 st.set_page_config(page_title="Kidney Disease Predictor", page_icon="")
 st.markdown("# Kidney Disease  Predictor")
@@ -17,7 +19,7 @@ sg = st.selectbox(
     [1.005, 1.010, 1.015, 1.020, 1.025, "Don't know"],
 )
 if sg == "Don't know":
-    sg = None
+    sg = nan
 al = st.number_input(
     "How severe is your albumin level?", value=-1, max_value=5, min_value=-1
 )
@@ -26,32 +28,28 @@ su = st.number_input(
 )
 rbc = st.selectbox("Are your red blood cells normal?", ["Yes", "No", "Don't know"])
 if rbc == "Yes":
-    rbc = 1
+    rbc = "normal"
 elif rbc == "No":
-    rbc = 0
+    rbc = "abnormal"
 else:
-    rbc = None
+    rbc = nan
 pc = st.selectbox("Is your pus cell count normal?", ["Yes", "No", "Don't know"])
 if pc == "Yes":
-    pc = 1
+    pc = "normal"
 elif pc == "No":
-    pc = 0
+    pc = "abnormal"
 else:
-    pc = None
-pcc = st.selectbox("Are pus cell clumps present?", ["Yes", "No", "Don't know"])
+    pc = nan
+pcc = st.selectbox("Are pus cell clumps present?", ["Yes", "No"])
 if pcc == "Yes":
-    pcc = 1
+    pcc = "present"
 elif pcc == "No":
-    pcc = 0
-else:
-    pcc = None
-ba = st.selectbox("Are bacteria present?", ["Yes", "No", "Don't know"])
-if ba == "Yes":
+    pcc = "notpresent"
+ba = st.selectbox("Are bacteria present?", ["Yes", "No"])
+if ba == "present":
     ba = 1
-elif ba == "No":
+elif ba == "notpresent":
     ba = 0
-else:
-    ba = None
 bgr = st.number_input("What is your blood glucose level?", value=-1, min_value=-1)
 bu = st.number_input("What is your blood urea level?", value=-1, min_value=-1)
 sc = st.number_input("What is your serum creatinine level?", step=0.1, min_value=-1.0)
@@ -71,46 +69,46 @@ rc = st.number_input(
 )
 htn = st.selectbox("Do you have hypertension?", ["Yes", "No", "Don't know"])
 if htn == "Yes":
-    htn = 1
+    htn = "yes"
 elif htn == "No":
-    htn = 0
+    htn = "no"
 else:
-    htn = None
+    htn = nan
 dm = st.selectbox("Do you have diabetes mellitus?", ["Yes", "No", "Don't know"])
 if dm == "Yes":
-    dm = 1
+    dm = "yes"
 elif dm == "No":
-    dm = 0
+    dm = "no"
 else:
-    dm = None
+    dm = nan
 cad = st.selectbox("Do you have coronary artery disease?", ["Yes", "No", "Don't know"])
 if cad == "Yes":
-    cad = 1
+    cad = "yes"
 elif cad == "No":
-    cad = 0
+    cad = "no"
 else:
-    cad = None
+    cad = nan
 appet = st.selectbox("How is your appetite?", ["Good", "Poor", "Don't Know"])
 if appet == "Good":
-    appet = 1
+    appet = "good"
 elif appet == "Poor":
-    appet = 0
+    appet = "poor"
 else:
-    appet = None
+    appet = nan
 pe = st.selectbox("Do you have pedal edema?", ["Yes", "No", "Don't know"])
 if pe == "Yes":
-    pe = 1
+    pe = "yes"
 elif pe == "No":
-    pe = 0
+    pe = "no"
 else:
-    pe = None
+    pe = nan
 ane = st.selectbox("Do you have anemia?", ["Yes", "No", "Don't know"])
 if ane == "Yes":
-    ane = 1
+    ane = "yes"
 elif ane == "No":
-    ane = 0
+    ane = "no"
 else:
-    ane = None
+    ane = nan
 
 
 rf = joblib.load("kidney.joblib")
@@ -170,7 +168,16 @@ symptoms = [
 for i in range(len(input_arr)):
     if i == 1 or 3 or 4 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 16 or 17:
         if input_arr[i] == -1:
-            input_arr[i] = None
+            input_arr[i] = nan
+        else:
+            input_arr[i] = float(input_arr[i])
+
+pkl_file = open("kidney.pkl", "rb")
+lbl = pickle.load(pkl_file)
+pkl_file.close()
+
+for i in symptoms:
+    input_arr[i] = lbl.transform(input_arr[i])
 
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]

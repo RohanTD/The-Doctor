@@ -65,15 +65,20 @@ symptoms = [
     "Alopecia",
     "Obesity",
 ]
-if input_arr[1] == "Male":
-    input_arr[1] = 1
-else:
-    input_arr[1] = 0
+
+pkl_file = open("diabetes.pkl", "rb")
+lbl = pickle.load(pkl_file)
+pkl_file.close()
+
 for i in range(2, len(input_arr)):
     if input_arr[i]:
-        input_arr[i] = 1
+        input_arr[i] = "Yes"
     else:
-        input_arr[i] = 0
+        input_arr[i] = "No"
+
+for i in symptoms:
+    input_arr[i] = lbl.transform(input_arr[i])
+
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
