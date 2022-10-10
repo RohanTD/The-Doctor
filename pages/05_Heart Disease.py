@@ -8,7 +8,7 @@ st.sidebar.markdown("# Heart Disease  Predictor")
 st.write("Input your symptoms below")
 
 col1, col2 = st.columns(2)
-age = col1.number_input("How old are you?", value=20)
+age = col1.number_input("How old are you?", value=29, min_value=29)
 trestbps = col1.number_input(
     "What is your resting systolic blood pressure (mmHg)?", value=120
 )

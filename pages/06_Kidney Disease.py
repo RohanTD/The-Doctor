@@ -36,16 +36,17 @@ htn = st.checkbox("Do you have hypertension?")
 dm = st.checkbox("Do you have diabetes mellitus?")
 cad = st.checkbox("Do you have coronary artery disease?")
 appet = st.selectbox("How is your appetite?", ["Good", "Poor"])
-if appet=="Good":
-    appet =1
+if appet == "Good":
+    appet = 1
 else:
-    appet=0
+    appet = 0
 pe = st.checkbox("Do you have pedal edema?")
 ane = st.checkbox("Do you have anemia?")
 
 
 rf = joblib.load("kidney.joblib")
-input_arr = [0,
+input_arr = [
+    0,
     age,
     bp,
     sg,
