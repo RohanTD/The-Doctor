@@ -163,11 +163,11 @@ symptoms = [
     "ane",
 ]
 
-for i in range(len(input_arr)):
-    if i in [1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
-        if input_arr[i] == -1:
-            input_arr[i] = "NaN"
-        # input_arr[i] = float(input_arr[i])
+# for i in range(len(input_arr)):
+# if i in [1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
+# if input_arr[i] == -1:
+# input_arr[i] = "NaN"
+# input_arr[i] = float(input_arr[i])
 
 for i in range(len(symptoms)):
     pkl_file = open("kidney_" + symptoms[i] + ".pkl", "rb")
