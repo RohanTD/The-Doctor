@@ -16,4 +16,4 @@ bokeh
 streamlit-bokeh-events
 joblib
 sklearn
-pickle
+pickle5
