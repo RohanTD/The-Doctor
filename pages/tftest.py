@@ -25,7 +25,7 @@ def get_prediction(img):
     st.write(type(img))
     size = (dimension, dimension)
     img = cv2.resize(img, size)
-    arr = np.reshape(shape=(1, dimension, dimension, channels))
+    img = np.reshape(img,[1, 128, 128, channels])
     
     
 
@@ -33,7 +33,7 @@ def get_prediction(img):
 #     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
     cnn = load_model("lyme.hdf5")
-    return cnn.predict(arr)
+    return cnn.predict(img)
 
 def getImage(img):
     
