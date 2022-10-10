@@ -1,5 +1,6 @@
 from keras.models import load_model
 import cv2
+from PIL import Image
 import numpy as np
 import streamlit as st
 model = load_model('lyme.hdf5')
