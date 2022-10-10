@@ -18,11 +18,11 @@ st.write(
 #     return cnn.predict(img)
 
 def get_prediction(img):
-    st.write(type(img))
+    #st.write(type(img))
     dimension = 128
     channels = 3
     img = np.asarray(img)
-    st.write(type(img))
+    #st.write(type(img))
     size = (dimension, dimension)
     img = cv2.resize(img, size)
     img = np.reshape(img,[1, 128, 128, channels])
@@ -40,9 +40,9 @@ def getImage(img):
     prediction = get_prediction(img)
     st.write(prediction)
     if prediction[0] < 0.9:
-        st.write("Normal Rash") #- Confidence: " + str((1 - prediction[0]) * 100) + "%")
+        st.subheader("Tested Negative for Lyme Disease") #- Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
-        st.write("Lyme - Confidence: " + str((prediction[0]) * 100) + "%")
+        st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
 
 
 fileHold = st.empty()
