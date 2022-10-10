@@ -10,11 +10,15 @@ st.markdown("# Disease  Predictor")
 st.write(
     "Upload an image of the suspected cancerous area. For best results, be sure that the growth is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair"
 )
-
-def getImage(img):
+def get_prediction(img):
     img = cv2.resize(img,(128,128))
     img = np.reshape(img,[1,128,128,3])
-    classes = model.predict(img)
+    cnn = load_model("lyme.hdf5")
+    return cnn.predict(img)
+
+def getImage(img):
+    
+    prediction = get_prediction(img)
     if prediction[0] < 0.9:
         st.write("Normal Rash") #- Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
