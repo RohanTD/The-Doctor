@@ -11,7 +11,7 @@ st.write(
 
 
 age = st.number_input("How old are you?", value=20, min_value=10)
-bp = st.number_input("What is your diastolic blood pressure?", value=81.0)
+bp = st.number_input("What is your diastolic blood pressure?", value=80.0)
 sg = st.selectbox(
     "What is your specific gravity?",
     [1.005, 1.010, 1.015, 1.020, 1.025, "Don't know"],
