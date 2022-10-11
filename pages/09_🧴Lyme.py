@@ -16,6 +16,7 @@ st.write(
 #     img = np.reshape(img,[1,128,128,3])
 #     cnn = load_model("lyme.hdf5")
 #     return cnn.predict(img)
+confidence_val = st.slider('Choose your confidence value. The larger the number, the harder it will be to detect and will produce more false negatives. The lower the number, the algorithm will produce more false positives.', 0.75, 0.98, 0.01)
 
 def get_prediction(img):
     #st.write(type(img))
