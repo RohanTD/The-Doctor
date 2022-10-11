@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import streamlit as st
 model = load_model('lyme.hdf5')
-
+confidence_val = 0.8
 st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Disease  Predictor")
 
@@ -38,8 +38,7 @@ def get_prediction(img):
 def getImage(img):
     
     prediction = get_prediction(img)
-    st.write(prediction)
-    if prediction[0] < 0.9:
+    if prediction[0] < confidence_val:
         st.subheader("Tested Negative for Lyme Disease") #- Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
         st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
