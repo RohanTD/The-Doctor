@@ -25,7 +25,7 @@ alopecia = col2.checkbox("Alopecia?")
 obesity = col2.checkbox("Obesity?")
 
 
-rf = joblib.load("diabetes.joblib")
+rf = joblib.load("diabetes-3.joblib")
 input_arr = [
     age,
     gender,
