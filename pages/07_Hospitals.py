@@ -5,7 +5,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 
-st.set_page_config(page_title="Hospital Finder", page_icon="")
+st.set_page_config(page_title="Hospital Finder", page_icon="🏥")
 st.markdown("# Hospital Finder")
 st.write(
     "Allow the site to access your location, and we will locate the nearest hospitals to you. Please be sure to disable any proxies or VPNs"
