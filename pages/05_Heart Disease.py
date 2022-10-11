@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import pickle
 
-st.set_page_config(page_title="Heart Disease Predictor", page_icon="")
+st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
 st.markdown("# Heart Disease  Predictor")
 st.write("Input your symptoms below")
 
