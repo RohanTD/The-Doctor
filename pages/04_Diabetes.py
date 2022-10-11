@@ -11,8 +11,6 @@ st.write("Input your symptoms below")
 age = st.number_input("How old are you?", value=25, min_value=25)
 gender = st.selectbox("What is your gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
-polyuria = col1.checkbox("Polyuria?")
-polydipsia = col1.checkbox("Polydipsia?")
 weight = col1.checkbox("Sudden weight loss?")
 weakness = col1.checkbox("Weakness?")
 polyphagia = col1.checkbox("Polyphagia?")
@@ -31,8 +29,6 @@ rf = joblib.load("diabetes.joblib")
 input_arr = [
     age,
     gender,
-    polyuria,
-    polydipsia,
     weight,
     weakness,
     polyphagia,
