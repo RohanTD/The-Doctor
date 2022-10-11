@@ -45,8 +45,6 @@ input_arr = [
 symptoms = [
     "Age",
     "Gender",
-    "Polyuria",
-    "Polydipsia",
     "sudden weight loss",
     "weakness",
     "Polyphagia",
