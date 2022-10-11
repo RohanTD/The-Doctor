@@ -4,7 +4,7 @@ from keras.models import load_model
 from PIL import Image
 import cv2
 
-st.set_page_config(page_title="Melanoma Predictor", page_icon="")
+st.set_page_config(page_title="Melanoma Predictor", page_icon="👦🏻")
 st.markdown("# Melanoma  Predictor")
 
 st.write(
