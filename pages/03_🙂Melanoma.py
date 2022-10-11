@@ -11,7 +11,7 @@ st.write(
     "Upload an image of the suspected cancerous area. For best results, be sure that the growth is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair"
 )
 
-@st.cache
+@st.cache(hash_funcs={"MyUnhashableClass": lambda _: None}
 def load_model():
 	  return load_model("v4_melanoma")
 def get_prediction(img):
