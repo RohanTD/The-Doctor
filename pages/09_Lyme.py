@@ -5,7 +5,7 @@ import numpy as np
 import streamlit as st
 model = load_model('lyme.hdf5')
 
-st.set_page_config(page_title="Lyme Disease Predictor", page_icon="")
+st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Disease  Predictor")
 
 st.write(
