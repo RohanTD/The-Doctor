@@ -475,6 +475,7 @@ sex = col2.selectbox("What is your gender?", ["Male", "Female"])
 slope = col2.selectbox(
     "What was the slope of the peak exercise ST segment (ECG)?",
     ["Upsloping", "Flat", "Downsloping"],
+    index=1,
 )
 
 thal = col2.selectbox(
