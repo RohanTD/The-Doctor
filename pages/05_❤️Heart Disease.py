@@ -62,6 +62,7 @@ if theSet.count(age) == 0:
             minVal = x
             newVal = i
     age = newVal
+    st.write(newVal)
 
 trestbps = col1.number_input(
     "What is your resting systolic blood pressure (mmHg)?",
@@ -129,6 +130,7 @@ if theSet.count(trestbps) == 0:
             minVal = x
             newVal = i
     trestbps = newVal
+    st.write(newVal)
 
 chol = col1.number_input(
     "What is your cholesterol level (mg/dL)?", value=250, min_value=126, max_value=417
@@ -296,6 +298,7 @@ if theSet.count(chol) == 0:
             minVal = x
             newVal = i
     chol = newVal
+    st.write(newVal)
 thalach = col1.number_input(
     "What was your maximum heart rate achieved?", value=150, min_value=71, max_value=202
 )
@@ -401,6 +404,7 @@ if theSet.count(thalach) == 0:
             minVal = x
             newVal = i
     thalach = newVal
+    st.write(newVal)
 oldpeak = col2.number_input(
     "How much of an ST depression induced by exercise relative to rest do you have (ECG)?",
     value=0.0,
@@ -459,6 +463,7 @@ if theSet.count(oldpeak) == 0:
             minVal = x
             newVal = i
     oldpeak = newVal
+    st.write(newVal)
 ca = col1.number_input(
     "How many major vessels were colored by fluoroscopy?",
     value=1,
