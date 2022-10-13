@@ -14,7 +14,7 @@ st.write(
 
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
-    range1 = 20  # in miles
+    range1 = 50  # in miles
     loc_button = Button(label="Allow Location Access")
     loc_button.js_on_event(
         "button_click",
