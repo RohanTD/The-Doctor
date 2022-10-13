@@ -24,7 +24,6 @@ stiffness = col2.checkbox("Muscle stiffness?")
 alopecia = col2.checkbox("Alopecia?")
 obesity = col2.checkbox("Obesity?")
 
-
 rf = joblib.load("diabetes-3.joblib")
 input_arr = [
     age,
@@ -70,6 +69,8 @@ for i in range(len(symptoms)):
     pkl_file = open("diabetes_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
+    if symptoms[i] == "Age":
+        st.write(lbl.get_params())
     input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):
