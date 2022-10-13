@@ -57,7 +57,7 @@ if theSet.count(age) == 0:
     minVal = 9999999
     newVal = 0
     for i in theSet:
-        x = math.abs(age - i)
+        x = abs(age - i)
         if x < minVal:
             minVal = x
             newVal = i
@@ -124,7 +124,7 @@ if theSet.count(trestbps) == 0:
     minVal = 9999999
     newVal = 0
     for i in theSet:
-        x = math.abs(trestbps - i)
+        x = abs(trestbps - i)
         if x < minVal:
             minVal = x
             newVal = i
@@ -291,7 +291,7 @@ if theSet.count(chol) == 0:
     minVal = 9999999
     newVal = 0
     for i in theSet:
-        x = math.abs(chol - i)
+        x = abs(chol - i)
         if x < minVal:
             minVal = x
             newVal = i
@@ -396,7 +396,7 @@ if theSet.count(thalach) == 0:
     minVal = 9999999
     newVal = 0
     for i in theSet:
-        x = math.abs(thalach - i)
+        x = abs(thalach - i)
         if x < minVal:
             minVal = x
             newVal = i
@@ -454,7 +454,7 @@ if theSet.count(oldpeak) == 0:
     minVal = 9999999
     newVal = 0
     for i in theSet:
-        x = math.abs(oldpeak - i)
+        x = abs(oldpeak - i)
         if x < minVal:
             minVal = x
             newVal = i
