@@ -44,6 +44,7 @@ def get_hospitals():
                 "lng": response["GET_LOCATION"]["lon"],
             },
             radius=range1 * 1609,
+            keyword="hospital"
             types=[types.TYPE_HOSPITAL],
         )
 
