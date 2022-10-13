@@ -8,7 +8,7 @@ st.markdown("# Diabetes  Predictor")
 st.write("Input your symptoms below")
 
 
-age = st.number_input("How old are you?", value=25, min_value=25)  # FIX
+age = st.number_input("How old are you?", value=25, min_value=25, max_value=70)
 gender = st.selectbox("What is your gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
 weight = col1.checkbox("Sudden weight loss?")
