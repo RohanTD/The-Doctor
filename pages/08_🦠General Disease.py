@@ -158,16 +158,19 @@ data_dict = {"symptom_index": symptom_index, "predictions_classes": encoder.clas
 
 
 def predictDisease(symptoms):
-    symptoms = symptoms.split(",")
+    if symptoms == "":
+        return "No disease"
+    else:
+        symptoms = symptoms.split(",")
 
-    input_data = [0] * len(data_dict["symptom_index"])
-    for symptom in symptoms:
-        index = data_dict["symptom_index"][symptom]
-        input_data[index] = 1
+        input_data = [0] * len(data_dict["symptom_index"])
+        for symptom in symptoms:
+            index = data_dict["symptom_index"][symptom]
+            input_data[index] = 1
 
-    input_data = np.array(input_data).reshape(1, -1)
-    svm_prediction = data_dict["predictions_classes"][model.predict(input_data)[0]]
-    return svm_prediction
+        input_data = np.array(input_data).reshape(1, -1)
+        svm_prediction = data_dict["predictions_classes"][model.predict(input_data)[0]]
+        return svm_prediction
 
 
 st.header("General Disease Predictor")
@@ -231,7 +234,7 @@ for i in range(len(skin)):
     skin[i] = skin[i].title()
 st.subheader("Skin")
 skinselect = st.multiselect(
-    "Choose anny symptoms that is related to the integumentary system", skin
+    "Choose any symptoms that are related to the integumentary system", skin
 )
 for i in range(len(digestion)):
     digestion[i] = digestion[i].replace("_", " ")
