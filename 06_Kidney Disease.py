@@ -10,8 +10,8 @@ st.write(
 )
 
 
-age = st.number_input("How old are you?", value=20, min_value=10)
-bp = st.number_input("What is your diastolic blood pressure?", value=80.0)
+age = st.number_input("How old are you?", value=20, min_value=10)  # FIX
+bp = st.number_input("What is your diastolic blood pressure?", value=80.0)  # FIX
 sg = st.selectbox(
     "What is your specific gravity?",
     [1.005, 1.010, 1.015, 1.020, 1.025, "Don't know"],
@@ -48,22 +48,30 @@ if ba == "Yes":
     ba = "present"
 elif ba == "No":
     ba = "notpresent"
-bgr = st.number_input("What is your blood glucose level?", value=-1.0, min_value=-1.0)
-bu = st.number_input("What is your blood urea level?", value=-1.0, min_value=-1.0)
-sc = st.number_input("What is your serum creatinine level?", step=0.1, min_value=-1.0)
-sod = st.number_input("What is your sodium level?", value=-1.0, min_value=-1.0)
+bgr = st.number_input(
+    "What is your blood glucose level?", value=-1.0, min_value=-1.0  # FIX
+)
+bu = st.number_input(
+    "What is your blood urea level?", value=-1.0, min_value=-1.0  # FIX
+)
+sc = st.number_input(
+    "What is your serum creatinine level?", step=0.1, min_value=-1.0  # FIX
+)
+sod = st.number_input("What is your sodium level?", value=-1.0, min_value=-1.0)  # FIX
 pot = st.number_input(
-    "What is your potassium level?", value=4.0, step=0.1, min_value=-1.0
+    "What is your potassium level?", value=4.0, step=0.1, min_value=-1.0  # FIX
 )
 hemo = st.number_input(
-    "What is your hemoglobin level?", value=10.0, step=0.1, min_value=-1.0
+    "What is your hemoglobin level?", value=10.0, step=0.1, min_value=-1.0  # FIX
 )
-pcv = st.number_input("What is your packed cell volume?", value=-1.0, min_value=-1.0)
+pcv = st.number_input(
+    "What is your packed cell volume?", value=-1.0, min_value=-1.0  # FIX
+)
 wc = st.number_input(
-    "What is your white blood cell count?", value=10000, step=100, min_value=-1
+    "What is your white blood cell count?", value=10000, step=100, min_value=-1  # FIX
 )
 rc = st.number_input(
-    "What is your red blood cell count?", value=4.0, step=0.1, min_value=-1.0
+    "What is your red blood cell count?", value=4.0, step=0.1, min_value=-1.0  # FIX
 )
 htn = st.selectbox("Do you have hypertension?", ["Yes", "No", "Don't know"])
 if htn == "Yes":

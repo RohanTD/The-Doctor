@@ -8,12 +8,14 @@ st.markdown("# Heart Disease  Predictor")
 st.write("Input your symptoms below")
 
 col1, col2 = st.columns(2)
-age = col1.number_input("How old are you?", value=29, min_value=29)
+age = col1.number_input("How old are you?", value=29, min_value=29)  # FIX
 trestbps = col1.number_input(
-    "What is your resting systolic blood pressure (mmHg)?", value=120
+    "What is your resting systolic blood pressure (mmHg)?", value=120  # FIX
 )
-chol = col1.number_input("What is your cholesterol level (mg/dL)?", value=250)
-thalach = col1.number_input("What was your maximum heart rate achieved?", value=150)
+chol = col1.number_input("What is your cholesterol level (mg/dL)?", value=250)  # FIX
+thalach = col1.number_input(
+    "What was your maximum heart rate achieved?", value=150  # FIX
+)
 ca = col1.number_input(
     "How many major vessels were colored by fluoroscopy?",
     value=1,
