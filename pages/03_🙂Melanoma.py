@@ -11,8 +11,10 @@ st.write(
     "Upload an image of the suspected cancerous area. For best results, be sure that the growth is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair"
 )
 
-#@st.cache(hash_funcs={"MyUnhashableClass": lambda _: None})
-
+@st.cache(allow_output_mutation=True)
+def loadModel(model_name):
+    m = load_model(model_name)
+    return (m)
 def get_prediction(img):
     dimension = 224
     channels = 3
@@ -27,7 +29,7 @@ def get_prediction(img):
 
     image_array = np.asarray(image)
     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
-    cnn = load_model("v4_melanoma")
+    cnn = loadModel("v4_melanoma")
     return cnn.predict(arr)
 
 
