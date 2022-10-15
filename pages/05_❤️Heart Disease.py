@@ -583,4 +583,25 @@ if st.button("Predict"):
     if pred == 1:
         st.write("You likely have heart disease")
     else:
-        st.write("You likely do not have heart disease")
+        st.write(
+                """<div style="text-align: center;"><span style="font-size: x-large; background-color: #00ff00;">You most likely DO NOT have heart and/or cardiovascular disease.</span></div>
+                <p><strong>If concerned, there are several ways you can reduce your risk of developing heart and/or cardiovascular diseases, such as:</strong></p>
+                <p><span>1. Lowering your blood and cholesterol levels.</span></p>
+                <p><span> 2. Eating a healthy, balanced diet.</span></p>
+                <p><span> 3. Maintaining a healthy weight.</span></p>
+                <p><span> 4. Giving up and/or avoiding smoking and tobacco.</span></p>
+                <p><span> 5. Reducing alcohol consumption.</span></p>
+                <p><span> 6. Keeping blood pressure under control.</span></p>
+                <p><span> 7. Being consistently active and involved in physical activity.</span></p>
+                <p>&nbsp;</p>
+                <p><strong>Cardiovascular diseases (CVDs) are the leading cause of death globally. An estimated 17.9 million people died from cardiovascular diseases per year, representing 32% of all global deaths.</strong></p>
+                <p>&nbsp;</p>
+                <p><em>Identifying those at the highest risk of CVDs early on, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
+                <h1>&nbsp;</h1>
+                <h1>&nbsp;</h1>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>""",
+                unsafe_allow_html=True,
+            )
