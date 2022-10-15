@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Home", page_icon="🏠")
 st.markdown("# Home")
-st.sidebar.markdown("# Home")
+
 
 st.write(
     "Welcome! This app is a univeral medical diagnostic tool with a range of functionality."
