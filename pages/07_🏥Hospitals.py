@@ -5,6 +5,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 
+
 st.set_page_config(page_title="Hospital Finder", page_icon="🏥")
 st.markdown("# Hospital Finder")
 st.write(
@@ -15,7 +16,7 @@ st.write(
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
-    loc_button = Button(label="Allow Location Access")
+    loc_button = Button(label="Allow Location Access", button_type="primary")
     loc_button.js_on_event(
         "button_click",
         CustomJS(
