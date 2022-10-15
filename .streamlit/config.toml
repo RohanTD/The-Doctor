@@ -1,6 +1,6 @@
 [theme]
 base="light"
-primaryColor="green"
+primaryColor="hsla(264, 31%, 68%, 0.99)"
 backgroundColor = "hsla(240, 31%, 68%, 0.99)"
-secondaryBackgroundColor = "hsla(157, 55%, 47%, 0.96)"
+secondaryBackgroundColor = "hsla(280, 31%, 71%, 0.99)"
 font = "serif"
