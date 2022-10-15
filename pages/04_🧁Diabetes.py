@@ -70,7 +70,7 @@ for i in range(len(symptoms)):
     lbl = pickle.load(pkl_file)
     pkl_file.close()
     if symptoms[i] == "Age":
-        st.write(lbl.get_params())
+        #st.write(lbl.get_params())
     input_arr[i] = lbl.transform([input_arr[i]])[0]
 
 if st.button("Predict"):
