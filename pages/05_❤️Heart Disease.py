@@ -6,7 +6,7 @@ import math
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
 st.markdown("# Heart Disease  Predictor")
-st.write("This predicts the chance of having Heart Disease through Machine Learning. Designed for doctors in assisting the diagnosis of Heart Disase, this algorithm requires unconventional measuresments that may not be readily available patient.")
+st.text("This predicts the chance of having Heart Disease through Machine Learning. Designed for doctors in assisting the diagnosis of Heart Disase, this algorithm requires unconventional measuresments that may not be readily available patient.")
 st.write("Input your symptoms below")
 
 col1, col2 = st.columns(2)
