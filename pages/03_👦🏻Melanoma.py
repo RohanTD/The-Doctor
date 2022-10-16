@@ -48,6 +48,8 @@ def getImage(img):
 <li><strong>Change in the surface of a mole &ndash; scaliness, oozing, bleeding, or the appearance of a lump or bump.</strong></li>
 </ol>
 <p><strong>The follwing picture is an image of malignant melanoma:</strong></p>""", unsafe_allow_html = True)
+        i = Image.open('https://upload.wikimedia.org/wikipedia/commons/6/6c/Melanoma.jpg')
+        st.image(i)
 
 
 fileHold = st.empty()
