@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 import pickle
-
+st.write("Hello World")
 st.set_page_config(page_title="Kidney Disease Predictor", page_icon="")
 st.markdown("# Kidney Disease  Predictor")
 st.write(
