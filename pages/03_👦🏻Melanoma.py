@@ -39,6 +39,15 @@ def getImage(img):
         st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
     else:
         st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
+        st.write("""<h2>You most likely do not have melanoma.</h2>
+<p>However, if you notice any of the following symptoms, please get checked by a doctor immediately:</p>
+<ol>
+<li><strong>Spread of pigment from the border of a spot into the surrounding skin</strong>.</li>
+<li><strong>Redness or a new swelling beyond the border of the mole.</strong></li>
+<li><strong>Change in sensation, such as itchiness, tenderness, or pain.</strong></li>
+<li><strong>Change in the surface of a mole &ndash; scaliness, oozing, bleeding, or the appearance of a lump or bump.</strong></li>
+</ol>
+<p><strong>The follwing picture is an image of malignant melanoma:</strong></p>""", unsafe_allow_html = True)
 
 
 fileHold = st.empty()
