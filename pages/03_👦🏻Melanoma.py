@@ -49,7 +49,7 @@ def getImage(img):
 </ol>
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""", unsafe_allow_html = True)
         i = Image.open('Melanoma.jpg')
-        st.image(i)
+        st.image(i, caption="If you identify a similar mole on your skin, please contact your doctor")
 
 
 fileHold = st.empty()
@@ -69,7 +69,7 @@ def camMethod():
     cam = camHold.camera_input("Take a photo (please allow webcam access)")
     if cam is not None:
         fileHold.empty()
-        getImage(Image.open(cam), caption="If you identify a similar mole on your skin, please contact your doctor")
+        getImage(Image.open(cam))
 
 
 fileMethod()
