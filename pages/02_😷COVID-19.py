@@ -2,11 +2,10 @@ import streamlit as st
 import joblib
 import pandas as pd
 import sklearn
-st.write("Hello World")
 st.set_page_config(page_title="COVID-19 Predictor", page_icon="😷")
 st.markdown("# COVID-19  Predictor")
 st.write("Input your symptoms below")
-
+st.write("Hello World")
 
 def covid():
     col1, col2 = st.columns(2)
