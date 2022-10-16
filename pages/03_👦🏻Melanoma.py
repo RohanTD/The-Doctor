@@ -69,7 +69,7 @@ def camMethod():
     cam = camHold.camera_input("Take a photo (please allow webcam access)")
     if cam is not None:
         fileHold.empty()
-        getImage(Image.open(cam))
+        getImage(Image.open(cam), caption="If you identify a similar mole on your skin, please contact your doctor")
 
 
 fileMethod()
