@@ -10,7 +10,7 @@ st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Lyme Disease  Predictor")
 
 st.write(
-    "Upload an image of the suspected cancerous area. For best results, be sure that the growth is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair. Please keep in mind, any pictures that is not skin may produce errors or unexpected results."
+    "Upload an image of the suspected diseased area. For best results, be sure that the area of concern is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair. Please keep in mind, any pictures that are not skin may produce errors or unexpected results."
 )
 # def get_prediction(img):
 #     img = cv2.resize(img,(128,128))
@@ -19,9 +19,9 @@ st.write(
 #     return cnn.predict(img)
 confidence_val = st.slider(
     "Choose your confidence value. The larger the number, the harder it will be to detect and will produce more false negatives. The lower the number, the algorithm will produce more false positives.",
-    0.75,
-    0.98,
-    0.01,
+    value=0.75,
+    max_value=0.98,
+    min_value=0.01,
 )
 
 

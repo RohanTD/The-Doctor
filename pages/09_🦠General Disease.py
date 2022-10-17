@@ -175,7 +175,7 @@ def predictDisease(symptoms):
 
 st.header("General Disease Predictor")
 st.write(
-    "Choose any symptoms that you are experiencing based on the category and we will do the best to diagnose it"
+    "Choose any symptoms that you are experiencing based on the category, and we will help to diagnose it"
 )
 
 skin = [
