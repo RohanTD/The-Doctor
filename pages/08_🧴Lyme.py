@@ -18,8 +18,8 @@ st.write(
 #     cnn = load_model("lyme.hdf5")
 #     return cnn.predict(img)
 confidence_val = st.slider(
-    "Choose your confidence value. The larger the number, the harder it will be to detect and will produce more false negatives. The lower the number, the algorithm will produce more false positives.",
-    value=0.75,
+    "Choose your confidence value. The larger the number, the more false negatives that will result. The lower the number, the more false positives that will result.",
+    value=0.65,
     max_value=0.98,
     min_value=0.01,
 )
