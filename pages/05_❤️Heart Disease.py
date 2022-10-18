@@ -413,8 +413,8 @@ cp = col2.selectbox(
     ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptompatic"],
 )
 
-fbs = col2.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
-exang = col2.checkbox("Do you experience exercise-induced angina?")
+fbs = col2.checkbox("Is your fasting blood sugar >120 mg/dL?")
+exang = col2.checkbox("Do you endure exercise-induced angina?")
 
 
 if cp == "Typical Angina":
