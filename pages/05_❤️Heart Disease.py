@@ -6,7 +6,9 @@ import math
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
 st.markdown("# Heart Disease  Predictor")
-st.write("This predicts the chance of having Heart Disease through Machine Learning. Designed for doctors in assisting the diagnosis of Heart Disase, this algorithm requires unconventional measuresments that may not be readily available patient.")
+st.write(
+    "This predicts the chance of having Heart Disease through Machine Learning. Designed for doctors in assisting the diagnosis of Heart Disase, this algorithm requires unconventional measuresments that may not be readily available patient."
+)
 st.subheader("Input your symptoms below")
 
 col1, col2 = st.columns(2)
@@ -472,7 +474,6 @@ ca = col1.number_input(
     min_value=0,
 )
 
-sex = col2.selectbox("What is your gender?", ["Male", "Female"])
 slope = col2.selectbox(
     "What was the slope of the peak exercise ST segment (ECG)?",
     ["Upsloping", "Flat", "Downsloping"],
@@ -500,11 +501,6 @@ restecg = col2.selectbox(
 fbs = col1.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
 exang = col1.checkbox("Do you experience exercise-induced angina?")
 
-
-if sex == "Male":
-    sex = 1
-else:
-    sex = 0
 
 if cp == "Typical Angina":
     cp = 0
@@ -539,7 +535,6 @@ else:
 rf = joblib.load("heart.joblib")
 input_arr = [
     age,
-    sex,
     cp,
     trestbps,
     chol,
@@ -554,7 +549,6 @@ input_arr = [
 ]
 symptoms = [
     "age",
-    "sex",
     "cp",
     "trestbps",
     "chol",
@@ -567,7 +561,7 @@ symptoms = [
     "ca",
     "thal",
 ]
-for i in [5, 8, 9]:
+for i in [4, 7, 8]:
     if input_arr[i]:
         input_arr[i] = 1
     else:
@@ -583,7 +577,7 @@ if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
         st.write(
-                """<div style="text-align: center;">
+            """<div style="text-align: center;">
                 <div><span style="font-size: x-large; background-color: #ff6600;">You have a HIGH chance of having a heart and cardiovascular disease. Please see a doctor immediately.</span></div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
@@ -602,11 +596,11 @@ if st.button("Predict"):
                 <h1>&nbsp;</h1>
                 <p>&nbsp;</p>
                 </div>""",
-                unsafe_allow_html=True,
-            )
+            unsafe_allow_html=True,
+        )
     else:
         st.write(
-                """<div style="text-align: center;"><span style="font-size: x-large; background-color: #00ff00;">You most likely DO NOT have heart and/or cardiovascular disease.</span></div>
+            """<div style="text-align: center;"><span style="font-size: x-large; background-color: #00ff00;">You most likely DO NOT have heart and/or cardiovascular disease.</span></div>
                 <p><strong>If concerned, there are several ways you can reduce your risk of developing heart and/or cardiovascular diseases, such as:</strong></p>
                 <p><span>1. Lowering your blood and cholesterol levels.</span></p>
                 <p><span> 2. Eating a healthy, balanced diet.</span></p>
@@ -625,5 +619,5 @@ if st.button("Predict"):
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>""",
-                unsafe_allow_html=True,
-            )
+            unsafe_allow_html=True,
+        )
