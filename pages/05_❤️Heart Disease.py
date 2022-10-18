@@ -408,7 +408,7 @@ if theSet.count(thalach) == 0:
             newVal = i
     thalach = newVal
 
-ca = col1.number_input(
+ca = col2.number_input(
     "How many major vessels were colored by fluoroscopy?",
     value=1,
     max_value=3,
@@ -434,7 +434,7 @@ restecg = col2.selectbox(
 )
 
 fbs = col1.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
-exang = col1.checkbox("Do you experience exercise-induced angina?")
+exang = col2.checkbox("Do you experience exercise-induced angina?")
 
 
 if cp == "Typical Angina":
