@@ -408,29 +408,9 @@ if theSet.count(thalach) == 0:
             newVal = i
     thalach = newVal
 
-ca = col2.number_input(
-    "How many major vessels were colored by fluoroscopy?",
-    value=1,
-    max_value=3,
-    min_value=0,
-)
-
-thal = col2.selectbox(
-    "Which type of thalassemia applies?",
-    ["Normal", "Fixed Defect", "Reversible Defect"],
-)
-
 cp = col2.selectbox(
     "What type of chest pain are you having?",
     ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptompatic"],
-)
-restecg = col2.selectbox(
-    "What were your resting ECG results?",
-    [
-        "Normal",
-        "ST-T Wave Abnormality",
-        "Left Ventricular Hypertrophy by Estes' Criteria",
-    ],
 )
 
 fbs = col1.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
@@ -446,20 +426,6 @@ elif cp == "Non-Anginal Pain":
 else:
     cp = 3
 
-if restecg == "Normal":
-    restecg = 0
-elif restecg == "ST-T Wave Abnormality":
-    restecg = 1
-else:
-    restecg = 2
-
-if thal == "Normal":
-    thal = 1
-elif thal == "Fixed Defect":
-    thal = 2
-else:
-    thal = 3
-
 rf = joblib.load("heart.joblib")
 input_arr = [
     age,
@@ -467,11 +433,8 @@ input_arr = [
     trestbps,
     chol,
     fbs,
-    restecg,
     thalach,
     exang,
-    ca,
-    thal,
 ]
 symptoms = [
     "age",
@@ -479,13 +442,10 @@ symptoms = [
     "trestbps",
     "chol",
     "fbs",
-    "restecg",
     "thalach",
     "exang",
-    "ca",
-    "thal",
 ]
-for i in [4, 7]:
+for i in [4, 6]:
     if input_arr[i]:
         input_arr[i] = 1
     else:
