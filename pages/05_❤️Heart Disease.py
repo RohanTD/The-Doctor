@@ -302,7 +302,7 @@ if theSet.count(chol) == 0:
             newVal = i
     chol = newVal
 
-thalach = col1.number_input(
+thalach = col2.number_input(
     "What was your maximum heart rate achieved?", value=150, min_value=71, max_value=202
 )
 theSet = [
@@ -413,7 +413,7 @@ cp = col2.selectbox(
     ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptompatic"],
 )
 
-fbs = col1.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
+fbs = col2.checkbox("Is your fasting blood sugar more than 120 mg/dL?")
 exang = col2.checkbox("Do you experience exercise-induced angina?")
 
 
