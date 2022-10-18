@@ -1,5 +1,5 @@
 [theme]
 base="light"
-primaryColor="hsla(264, 31%, 68%, 0.99)"
-secondaryBackgroundColor = "hsl(225, 100%, 86%)"
+primaryColor="#184966"
+secondaryBackgroundColor = "#DDB54A"
 font = "sans serif"
