@@ -408,76 +408,11 @@ if theSet.count(thalach) == 0:
             newVal = i
     thalach = newVal
 
-oldpeak = col2.number_input(
-    "How much of an ST depression induced by exercise relative to rest do you have (ECG)?",
-    value=0.0,
-    min_value=0.0,
-    step=0.1,
-    max_value=6.2,
-)
-theSet = [
-    0.0,
-    0.1,
-    0.2,
-    0.3,
-    0.4,
-    0.5,
-    0.6,
-    0.7,
-    0.8,
-    0.9,
-    1.0,
-    1.1,
-    1.2,
-    1.3,
-    1.4,
-    1.5,
-    1.6,
-    1.8,
-    1.9,
-    2.0,
-    2.1,
-    2.2,
-    2.3,
-    2.4,
-    2.5,
-    2.6,
-    2.8,
-    2.9,
-    3.0,
-    3.1,
-    3.2,
-    3.4,
-    3.5,
-    3.6,
-    3.8,
-    4.0,
-    4.2,
-    4.4,
-    5.6,
-    6.2,
-]
-if theSet.count(oldpeak) == 0:
-    minVal = 9999999
-    newVal = 0
-    for i in theSet:
-        x = abs(oldpeak - i)
-        if x < minVal:
-            minVal = x
-            newVal = i
-    oldpeak = newVal
-
 ca = col1.number_input(
     "How many major vessels were colored by fluoroscopy?",
     value=1,
     max_value=3,
     min_value=0,
-)
-
-slope = col2.selectbox(
-    "What was the slope of the peak exercise ST segment (ECG)?",
-    ["Upsloping", "Flat", "Downsloping"],
-    index=1,
 )
 
 thal = col2.selectbox(
@@ -518,13 +453,6 @@ elif restecg == "ST-T Wave Abnormality":
 else:
     restecg = 2
 
-if slope == "Upsloping":
-    slope = 0
-elif slope == "Flat":
-    slope = 1
-else:
-    slope = 2
-
 if thal == "Normal":
     thal = 1
 elif thal == "Fixed Defect":
@@ -542,8 +470,6 @@ input_arr = [
     restecg,
     thalach,
     exang,
-    oldpeak,
-    slope,
     ca,
     thal,
 ]
@@ -556,12 +482,10 @@ symptoms = [
     "restecg",
     "thalach",
     "exang",
-    "oldpeak",
-    "slope",
     "ca",
     "thal",
 ]
-for i in [4, 7, 8]:
+for i in [4, 7]:
     if input_arr[i]:
         input_arr[i] = 1
     else:
