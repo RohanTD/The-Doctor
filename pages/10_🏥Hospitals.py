@@ -74,7 +74,7 @@ def get_hospitals():
             #  for j in range(int(place.rating)):
 
             website = place.website
-            if website.count("?") > 0:
+            if website is not None and website.count("?") > 0:
                 website = website[0 : website.index("?")]
             # st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
