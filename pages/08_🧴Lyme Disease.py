@@ -10,7 +10,7 @@ st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Lyme Disease  Predictor")
 
 st.write(
-    "Upload an image of the suspected diseased area. For best results, be sure that the area of concern is centered, well-lit, covers a majority of the image, and is minimally obstructed by hair. Please keep in mind, any pictures that are not skin may produce errors or unexpected results."
+    "Upload an image of the suspected diseased area. For best results, be sure that the area of concern is centered, well-lit, covering a majority of the image, and minimally obstructed by hair. Please keep in mind, any pictures that are not skin may produce errors or unexpected results."
 )
 # def get_prediction(img):
 #     img = cv2.resize(img,(128,128))
