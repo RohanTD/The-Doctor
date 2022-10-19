@@ -73,13 +73,13 @@ def get_hospitals():
             )
             #  for j in range(int(place.rating)):
 
-            url = place.url
-            url = url[0 : url.index("?")]
+            website = place.website
+            website = website[0 : website.index("?")]
             # st.write(f"Rating: {place.rating}")
             # st.write(f"Phone: {place.formatted_phone_number}")
             st.write(f"Address: {place.formatted_address}")
-            st.write(f"Directions: {url}")
-            st.write(f"Website: {place.website}")
+            st.write(f"Directions: {place.url}")
+            st.write(f"Website: {website}")
             st.write("\n")
 
 
