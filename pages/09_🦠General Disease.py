@@ -12,8 +12,9 @@ import pandas as pd
 import pickle
 
 st.set_page_config(page_title="General Disease Predictor", page_icon="🦠")
-model = joblib.load("Multiple-Disease.joblib")
+filename = 'DiseaseMod_model.sav'
 
+model = pickle.load(open(filename, 'rb'))
 
 symptoms = [
     "itching",
