@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 import pickle
+
 st.write("Hello World")
 st.set_page_config(page_title="Kidney Disease Predictor", page_icon="")
 st.markdown("# Kidney Disease  Predictor")
@@ -49,8 +50,65 @@ if ba == "Yes":
 elif ba == "No":
     ba = "notpresent"
 bgr = st.number_input(
-    "What is your blood glucose level?", value=-1.0, min_value=-1.0  # FIX
+    "What is your blood glucose level?",
+    value=-1.0,
+    min_value=-1.0,
+    max_value=490.0,  # FIX
 )
+theSet = [
+    29,
+    34,
+    35,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    74,
+    76,
+    77,
+]
+if theSet.count(age) == 0:
+    minVal = 9999999
+    newVal = 0
+    for i in theSet:
+        x = abs(age - i)
+        if x < minVal:
+            minVal = x
+            newVal = i
+    age = newVal
+
+
 bu = st.number_input(
     "What is your blood urea level?", value=-1.0, min_value=-1.0  # FIX
 )

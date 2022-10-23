@@ -2,9 +2,11 @@ import streamlit as st
 import joblib
 import pandas as pd
 import sklearn
+
 st.set_page_config(page_title="COVID-19 Predictor", page_icon="😷")
 st.markdown("# COVID-19  Predictor")
 st.write("Input your symptoms below")
+
 
 def covid():
     col1, col2 = st.columns(2)
@@ -12,9 +14,14 @@ def covid():
     fever = col1.checkbox("Do you have a fever?")
     dry_cough = col1.checkbox("Do you have dry cough?")
     sore_throat = col1.checkbox("Do you have a sore throat?")
-    hypertension = col1.checkbox("Do you have hypertension?")
-    fatigue = col1.checkbox("Do you experience fatigue?")
-    travel = col1.checkbox("Have you traveled abroad recently?")
+    hypertension = col1.checkbox(
+        "Do you have hypertension?", help="Hypertension is high blood pressure"
+    )
+    fatigue = col1.checkbox("Do you feel fatigue?")
+    travel = col1.checkbox(
+        "Have you traveled abroad recently?",
+        help="This includes any place outside of the United States",
+    )
     contact = col2.checkbox(
         "Have you had contact with a COVID patient in the last 14 days?"
     )
