@@ -114,7 +114,7 @@ symptoms = [
     "red_spots_over_body",
     "belly_pain",
     "abnormal_menstruation",
-    "dyschromic_patches",
+    "dischromic_patches",
     "watering_from_eyes",
     "increased_appetite",
     "polyuria",
