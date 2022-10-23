@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.svm import SVC
 
 st.set_page_config(page_title="General Disease Predictor", page_icon="🦠")
-model = pickle.load(open("gendisease.sav", "rb"))
+model = pickle.load(open("Multiple-Disease.joblib", "rb"))
 
 symptoms = [
     "itching",
