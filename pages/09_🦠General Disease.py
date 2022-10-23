@@ -224,6 +224,8 @@ digestion = [
     "belly_pain",
     "increased_appetite",
     "distention_of_abdomen",
+    "nausea",
+    "acute_liver_failure",
 ]
 
 ent_respiratory = [
@@ -287,6 +289,7 @@ emotional = [
     "irritability",
     "fatigue",
     "restlessness",
+    "mood_swings",
 ]
 
 circulatory = [
