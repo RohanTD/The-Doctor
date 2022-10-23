@@ -158,7 +158,6 @@ data_dict = {"symptom_index": symptom_index, "predictions_classes": encoder.clas
 
 
 def predictDisease(symptoms):
-    st.write(symptoms)
     if symptoms == "":
         return "No disease"
     else:
