@@ -17,7 +17,7 @@ polyuria = col1.checkbox(
 
 polyphagia = col1.checkbox("Do you feel excessively hungry?")
 polydipsia = col1.checkbox("Do you feel excessively thirsty?")
-weight = col1.checkbox("Have you had sudden weight loss?")
+weight = col1.checkbox("Have you lost weight suddenly?")
 weakness = col1.checkbox("Do you feel weakness?")
 thrush = col1.checkbox(
     "Do you have genital thrush?",
