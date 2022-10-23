@@ -72,6 +72,7 @@ trestbps = col1.number_input(
     value=120,
     min_value=94,
     max_value=200,
+    help="Systolic blood pressure is the top number in an ordinary blood pressure reading",
 )
 theSet = [
     94,
@@ -411,10 +412,13 @@ if theSet.count(thalach) == 0:
 cp = col2.selectbox(
     "What type of chest pain are you having?",
     ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptompatic"],
+    help="Typical angina is chest pain caused by physical or emotional stress that can be alleviated with rest or nitroglycerin, while atypical angina does not meet these criteria. Non-anginal pain is a pain felt behind the sternum that is not from the heart",
 )
 
 fbs = col2.checkbox("Is your fasting blood sugar >120 mg/dL?")
-exang = col2.checkbox("Do you endure exercise-induced angina?")
+exang = col2.checkbox(
+    "Does exercise induce your angina?", help="Angina means chest pain"
+)
 
 
 if cp == "Typical Angina":
