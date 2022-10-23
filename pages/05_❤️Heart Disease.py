@@ -7,7 +7,7 @@ import math
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
 st.markdown("# Heart Disease  Predictor")
 st.write(
-    "This predicts the chance of having Heart Disease through Machine Learning. Designed for doctors in assisting the diagnosis of Heart Disase, this algorithm requires unconventional measuresments that may not be readily available patient."
+    "This predicts the chance of having Heart Disease through Machine Learning. Answer these questions to the best of your ability, and the algorithm will predict whether you likely have heart disease."
 )
 st.subheader("Input your symptoms below")
 
@@ -411,7 +411,7 @@ if theSet.count(thalach) == 0:
 
 cp = col2.selectbox(
     "What type of chest pain are you having?",
-    ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptompatic"],
+    ["Typical Angina", "Atypical Angina", "Non-Anginal Pain", "Asymptomatic"],
     help="Typical angina is chest pain caused by physical or emotional stress that can be alleviated with rest or nitroglycerin, while atypical angina does not meet these criteria. Non-anginal pain is a pain felt behind the sternum that is not from the heart",
 )
 
