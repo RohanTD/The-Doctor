@@ -396,7 +396,7 @@ patientsymp = (
     + digestionselect
     + respiratoryselect
     + eyeselect
-    + musculoskeletal
+    + musculoskeletalselect
     + temperatureselect
     + urinaryselect
     + emotionselect
