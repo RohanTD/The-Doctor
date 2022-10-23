@@ -7,6 +7,9 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.svm import SVC
+import joblib
+import pandas as pd
+import pickle
 
 st.set_page_config(page_title="General Disease Predictor", page_icon="🦠")
 model = joblib.load("Multiple-Disease.joblib")
