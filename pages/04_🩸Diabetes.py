@@ -8,25 +8,38 @@ st.markdown("# Diabetes  Predictor")
 st.write("Input your symptoms below")
 
 age = st.number_input("How old are you?", value=25, min_value=25, max_value=70)
-gender = st.selectbox("What is your gender?", ["Male", "Female"])
+gender = st.selectbox("What is your biological gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
-weight = col1.checkbox("Sudden weight loss?")
-weakness = col1.checkbox("Weakness?")
-polyphagia = col1.checkbox("Polyphagia?", help="This is ")
-thrush = col1.checkbox("Genital thrush?")
-blurring = col1.checkbox("Blurred vision?")
-itching = col1.checkbox("Itching?")
-irritability = col2.checkbox("Irritability?")
-healing = col2.checkbox("Delayed healing?")
-paresis = col2.checkbox("Partial paresis?")
-stiffness = col2.checkbox("Muscle stiffness?")
-alopecia = col2.checkbox("Alopecia?")
-obesity = col2.checkbox("Obesity?")
+weight = col1.checkbox("Have you had sudden weight loss?")
+weakness = col1.checkbox("Do you feel weakness?")
+polyphagia = col1.checkbox("Do you feel excessively hungry?")
+thrush = col1.checkbox(
+    "Do you have genital thrush?",
+    help="Genital thrush is a yeast infection of the genitals, and symptoms include inflammation, itchiness, and discharge",
+)
+blurring = col1.checkbox("Is your vision blurred?")
+itching = col1.checkbox("Do you have itching?")
+polyuria = col1.checkbox(
+    "Are you urinating excessively?",
+)
 
-rf = joblib.load("diabetes-3.joblib")
+irritability = col2.checkbox("Do you feel irritable?")
+healing = col2.checkbox("Do you have delayed healing?")
+paresis = col2.checkbox(
+    "Do you have partial paresis?",
+    help="Paresis is the weakning or paralysis of muscles",
+)
+stiffness = col2.checkbox("Are your muscles stiff?")
+alopecia = col2.checkbox(
+    "Do you have alopecia?",
+    help="Alopecia is a condition of sudden hair loss in patches",
+)
+obesity = col2.checkbox("Are you obese?")
+polydipsia = col2.checkbox("Do you have polydipsia?")
+
+rf = joblib.load("diabetes.joblib")
 input_arr = [
     age,
-    gender,
     weight,
     weakness,
     polyphagia,
