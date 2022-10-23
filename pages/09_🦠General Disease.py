@@ -25,7 +25,7 @@ symptoms = [
     "muscle_wasting",
     "vomiting",
     "burning_micturition",
-    "spotting_ urination",
+    "spotting_urination",
     "fatigue",
     "weight_gain",
     "anxiety",
@@ -102,7 +102,7 @@ symptoms = [
     "weakness_of_one_body_side",
     "loss_of_smell",
     "bladder_discomfort",
-    "foul_smell_of urine",
+    "foul_smell_of_urine",
     "continuous_feel_of_urine",
     "passage_of_gases",
     "internal_itching",
@@ -114,7 +114,7 @@ symptoms = [
     "red_spots_over_body",
     "belly_pain",
     "abnormal_menstruation",
-    "dischromic _patches",
+    "dyschromic_patches",
     "watering_from_eyes",
     "increased_appetite",
     "polyuria",
@@ -129,7 +129,6 @@ symptoms = [
     "stomach_bleeding",
     "distention_of_abdomen",
     "history_of_alcohol_consumption",
-    "fluid_overload.1",
     "blood_in_sputum",
     "prominent_veins_on_calf",
     "palpitations",
@@ -175,7 +174,7 @@ def predictDisease(symptoms):
 
 st.header("General Disease Predictor")
 st.write(
-    "Choose any symptoms that you are experiencing based on the category, and we will help to diagnose it"
+    "Choose any symptoms that you are experiencing based on the category, and we will help to diagnose the disease."
 )
 
 skin = [
@@ -194,13 +193,17 @@ skin = [
     "pus_filled_pimples",
     "blackheads",
     "scurring",
+    "red_spots_over_body",
+    "dyschromic_patches",
 ]
 
 digestion = [
     "stomach_pain",
     "acidity",
     "ulcers_on_tongue",
-    "vomiting" "weight_gain",
+    "vomiting",
+    "weight_gain",
+    "weight_loss",
     "patches_in_throat",
     "irregular_sugar_level",
     "indigestion",
@@ -209,20 +212,105 @@ digestion = [
     "abdominal_pain",
     "diarrhoea",
     "swelling_of_stomach",
-    "fluid_overload",
     "pain_during_bowel_movements",
     "pain_in_anal_region",
     "bloody_stool",
     "stomach_bleeding",
     "irritation_in_anus",
     "cramps",
+    "excessive_hunger",
     "passage_of_gases",
     "belly_pain",
+    "increased_appetite",
+    "distention_of_abdomen",
+]
+
+ent_respiratory = [
+    "continuous_sneezing",
+    "cough",
+    "breathlessness",
+    "runny_nose",
+    "congestion",
+    "sinus_pressure",
+    "patches_in_throat",
+    "phlegm",
+    "throat_irritation",
+    "loss_of_smell",
+    "mucoid_sputum",
+    "rusty_sputum",
+    "blood_in_sputum",
+]
+
+eyes = [
+    "sunken_eyes",
+    "pain_behind_the_eyes",
+    "yellowing_of_eyes",
+    "blurred_and_distorted_vision",
+    "redness_of_eyes",
+    "watering_from_eyes",
+    "visual_disturbances",
+]
+
+musculoskeletal = [
+    "joint_pain",
+    "muscle_wasting",
+    "weakness_in_limbs",
+    "cramps",
+    "knee_pain",
+    "hip_joint_pain",
+    "muscle_weakness",
+    "stiff_neck",
+    "swelling_joints",
+    "movement_stiffness",
+    "muscle_pain",
+    "painful_walking",
+]
+
+body_temperature = ["shivering", "chills", "high_fever", "sweating", "mild_fever"]
+
+urinary = [
+    "burning_micturition",
+    "spotting_urination",
+    "dark_urine",
+    "yellow_urine",
+    "bladder_discomfort",
+    "foul_smell_of_urine",
+    "continuous_feel_of_urine",
+    "polyuria",
+]
+
+emotional = [
+    "anxiety",
+    "lethargy",
+    "depression",
+    "irritability",
+    "fatigue",
+    "restlessness",
+]
+
+circulatory = [
+    "irregular_sugar_level",
+    "fast_heart_rate",
+    "swollen_blood_vessels",
+    "receiving_blood_transfusion",
+    "receiving_unsterile_injections",
+    "prominent_veins_on_calf",
+    "palpitations",
 ]
 
 other = []
 for i in symptoms:
-    if i in skin or i in digestion:
+    if (
+        i in skin
+        or i in digestion
+        or i in ent_respiratory
+        or i in eyes
+        or i in musculoskeletal
+        or i in body_temperature
+        or i in urinary
+        or i in emotional
+        or i in circulatory
+    ):
         pass
     else:
         other.append(i)
@@ -243,9 +331,76 @@ st.subheader("Digestive System")
 digestionselect = st.multiselect(
     "Choose any symptoms that are related to the digestive system", digestion
 )
+for i in range(len(ent_respiratory)):
+    ent_respiratory[i] = ent_respiratory[i].replace("_", " ")
+    ent_respiratory[i] = ent_respiratory[i].title()
+st.subheader("ENT/Respiratory System")
+respiratoryselect = st.multiselect(
+    "Choose any symptoms that are related to the ENT/respiratory system",
+    ent_respiratory,
+)
+for i in range(len(eyes)):
+    eyes[i] = eyes[i].replace("_", " ")
+    eyes[i] = eyes[i].title()
+st.subheader("Eyes")
+eyeselect = st.multiselect(
+    "Choose any symptoms that are related to your eyes",
+    eyes,
+)
+for i in range(len(musculoskeletal)):
+    musculoskeletal[i] = musculoskeletal[i].replace("_", " ")
+    musculoskeletal[i] = musculoskeletal[i].title()
+st.subheader("Musculoskeletal System")
+musculoskeletalselect = st.multiselect(
+    "Choose any symptoms that are related to your musculoskeletal system",
+    musculoskeletal,
+)
+for i in range(len(body_temperature)):
+    body_temperature[i] = body_temperature[i].replace("_", " ")
+    body_temperature[i] = body_temperature[i].title()
+st.subheader("Body Temperature")
+temperatureselect = st.multiselect(
+    "Choose any symptoms that are related to your body temperature",
+    body_temperature,
+)
+for i in range(len(urinary)):
+    urinary[i] = urinary[i].replace("_", " ")
+    urinary[i] = urinary[i].title()
+st.subheader("Urinary System")
+urinaryselect = st.multiselect(
+    "Choose any symptoms that are related to your urinary system",
+    urinary,
+)
+for i in range(len(emotional)):
+    emotional[i] = emotional[i].replace("_", " ")
+    emotional[i] = emotional[i].title()
+st.subheader("Emotional/Energy")
+emotionselect = st.multiselect(
+    "Choose any symptoms that are related to your emotions/level of energy",
+    emotional,
+)
+for i in range(len(circulatory)):
+    circulatory[i] = circulatory[i].replace("_", " ")
+    circulatory[i] = circulatory[i].title()
+st.subheader("Circulatory System")
+circulatoryselect = st.multiselect(
+    "Choose any symptoms that are related to your circulatory system",
+    circulatory,
+)
 st.subheader("Other")
 otherselect = st.multiselect("Choose any other symptoms", other)
-patientsymp = skinselect + digestionselect + otherselect
+patientsymp = (
+    skinselect
+    + digestionselect
+    + respiratoryselect
+    + eyeselect
+    + musculoskeletal
+    + temperatureselect
+    + urinaryselect
+    + emotionselect
+    + circulatoryselect
+    + otherselect
+)
 finalstr = ""
 for i in range(len(patientsymp)):
     if i != len(patientsymp) - 1:
