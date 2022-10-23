@@ -128,6 +128,7 @@ symptoms = [
     "coma",
     "stomach_bleeding",
     "distention_of_abdomen",
+    "fluid_overload.1",
     "history_of_alcohol_consumption",
     "blood_in_sputum",
     "prominent_veins_on_calf",
