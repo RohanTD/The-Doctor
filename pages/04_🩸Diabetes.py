@@ -10,18 +10,21 @@ st.write("Input your symptoms below")
 age = st.number_input("How old are you?", value=25, min_value=25, max_value=70)
 gender = st.selectbox("What is your biological gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
+
+polyuria = col1.checkbox(
+    "Are you urinating excessively?",
+)
+
+polyphagia = col1.checkbox("Do you feel excessively hungry?")
+polydipsia = col1.checkbox("Do you feel excessively thirsty?")
 weight = col1.checkbox("Have you had sudden weight loss?")
 weakness = col1.checkbox("Do you feel weakness?")
-polyphagia = col1.checkbox("Do you feel excessively hungry?")
 thrush = col1.checkbox(
     "Do you have genital thrush?",
     help="Genital thrush is a yeast infection of the genitals, and symptoms include inflammation, itchiness, and discharge",
 )
 blurring = col1.checkbox("Is your vision blurred?")
-itching = col1.checkbox("Do you have itching?")
-polyuria = col1.checkbox(
-    "Are you urinating excessively?",
-)
+itching = col2.checkbox("Do you have itching?")
 
 irritability = col2.checkbox("Do you feel irritable?")
 healing = col2.checkbox("Do you have delayed healing?")
@@ -35,11 +38,13 @@ alopecia = col2.checkbox(
     help="Alopecia is a condition of sudden hair loss in patches",
 )
 obesity = col2.checkbox("Are you obese?")
-polydipsia = col2.checkbox("Do you have polydipsia?")
 
 rf = joblib.load("diabetes.joblib")
 input_arr = [
     age,
+    gender,
+    polyuria,
+    polydipsia,
     weight,
     weakness,
     polyphagia,
@@ -56,6 +61,8 @@ input_arr = [
 symptoms = [
     "Age",
     "Gender",
+    "Polyuria",
+    "Polydipsia",
     "sudden weight loss",
     "weakness",
     "Polyphagia",
