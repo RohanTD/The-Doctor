@@ -44,12 +44,12 @@ def get_prediction(img):
 
 def getImage(img):
 
-    	prediction = get_prediction(img)
-	if prediction[0] < (confidence_val * 0.75 + 0.25):
-        	st.subheader(
+    prediction = get_prediction(img)
+    if (prediction[0] < (confidence_val * 0.75 + 0.25)):
+        st.subheader(
             "Tested Negative for Lyme Disease"
         	)  # - Confidence: " + str((1 - prediction[0]) * 100) + "%")
-        	st.write("""<h1 style="text-align:center"><span style="font-family:Comic Sans MS, cursive"><em><span style="background-color:#2ecc71">You most likely do not have Erythema Migrans - a primary symptom of Lyme Disease</span></em></span></h1>
+        st.write("""<h1 style="text-align:center"><span style="font-family:Comic Sans MS, cursive"><em><span style="background-color:#2ecc71">You most likely do not have Erythema Migrans - a primary symptom of Lyme Disease</span></em></span></h1>
 
 		<p><strong><span style="font-family:Comic Sans MS, cursive"><em>If you are experiencing any of the following symptoms of Lyme disease, please contact your doctor:</em></span></strong></p>
 
@@ -61,9 +61,9 @@ def getImage(img):
 		</ol>
 
 			<h3 style="text-align:center"><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is not an official diagnosis, we are doing the best we can with the pictures provided to use from the internet. The following picture is an example of an Erythema Migrans Rash:</span></em></h3>""", unsafe_allow_html = True)
-		st.image("EM.jpg")
-	else:
-        	st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
+        st.image("EM.jpg")
+    else:
+        st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
 
 
 fileHold = st.empty()
