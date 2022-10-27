@@ -61,6 +61,7 @@ def getImage(img):
 </ol>
 
 <h3 style="text-align:center"><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is not an official diagnosis, we are doing the best we can with the pictures provided to use from the internet. The following picture is an example of an Erythema Migrans Rash:</span></em></h3>""", unsafe_allow_html = True)
+	st.image("EM.jpg")
     else:
         st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
 
