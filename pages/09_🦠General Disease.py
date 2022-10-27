@@ -202,7 +202,7 @@ skin = [
     "blackheads",
     "scurring",
     "red_spots_over_body",
-    "dyschromic_patches",
+    "dischromic_patches",
 ]
 
 digestion = [
