@@ -419,7 +419,7 @@ for i in range(len(patientsymp)):
     else:
         finalstr += patientsymp[i]
 if st.button("Predict"):
-st.write(
+	st.write(
             """<html>
 		<head>
 		<title></title>
