@@ -421,16 +421,16 @@ for i in range(len(patientsymp)):
 if st.button("Predict"):
 st.write(
             """<html>
-<head>
-	<title></title>
-	<style type="text/css">
-	</style>
-</head>
-<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="9.63.0">
-<h2 style="text-align: center;">There is a chance that you may have:</h2>
+		<head>
+		<title></title>
+		<style type="text/css">
+		</style>
+		</head>
+		<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="9.63.0">
+		<h2 style="text-align: center;">There is a chance that you may have:</h2>
 
-<p>&nbsp;</p>
-</body>
-</html>""",
+		<p>&nbsp;</p>
+	</body>
+		</html>""",
             unsafe_allow_html=True,
         )
