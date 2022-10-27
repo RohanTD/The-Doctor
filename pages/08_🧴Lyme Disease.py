@@ -44,7 +44,7 @@ def get_prediction(img):
 
 def getImage(img):
 
-    prediction = get_prediction(img)
+    	prediction = get_prediction(img)
 	if prediction[0] < (confidence_val * 0.75 + 0.25):
         	st.subheader(
             "Tested Negative for Lyme Disease"
