@@ -419,4 +419,18 @@ for i in range(len(patientsymp)):
     else:
         finalstr += patientsymp[i]
 if st.button("Predict"):
-    st.write(predictDisease(finalstr))
+st.write(
+            """<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	</style>
+</head>
+<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="9.63.0">
+<h2 style="text-align: center;">There is a chance that you may have:</h2>
+
+<p>&nbsp;</p>
+</body>
+</html>""",
+            unsafe_allow_html=True,
+        )
