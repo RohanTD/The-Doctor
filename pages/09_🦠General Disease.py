@@ -153,7 +153,7 @@ symptoms = [
 Data = "Training.csv"
 data = pd.read_csv(Data).dropna(axis=1)
 encoder = LabelEncoder()
-data=data.drop(data[data['prognosis']!="AIDS"].index, inplace = True)
+data=data.drop(data[data['prognosis']=="AIDS"].index, inplace = True)
 data["prognosis"] = encoder.fit_transform(data["prognosis"])
 symptom_index = {}
 for index, value in enumerate(symptoms):
