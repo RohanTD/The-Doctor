@@ -426,5 +426,5 @@ if st.button("Predict"):
             unsafe_allow_html=True,
         )
 	st.write("""<h1 style="text-align:center"><span style="font-family:
-	Comic Sans MS,cursive"><span style="background-color:#e74c3c">"""+  + """</span></span></h1>
+	Comic Sans MS,cursive"><span style="background-color:#e74c3c">"""+  str(predictDisease(finalstr))+ """</span></span></h1>
 	""", unsafe_allow_html=True)
