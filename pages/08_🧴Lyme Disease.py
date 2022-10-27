@@ -49,18 +49,15 @@ def getImage(img):
         st.subheader(
             "Tested Negative for Lyme Disease"
         	)  # - Confidence: " + str((1 - prediction[0]) * 100) + "%")
-        st.write("""<h1 style="text-align:center"><span style="font-family:Comic Sans MS, cursive"><em><span style="background-color:#2ecc71">You most likely do not have Erythema Migrans - a primary symptom of Lyme Disease</span></em></span></h1>
-
-		<p><strong><span style="font-family:Comic Sans MS, cursive"><em>If you are experiencing any of the following symptoms of Lyme disease, please contact your doctor:</em></span></strong></p>
-
-		<ol>
-		<li><em><span style="font-family:Comic Sans MS,cursive">Muscle Pain</span></em></li>
-		<li><em><span style="font-family:Comic Sans MS,cursive">Bull&#39;s Eye Pattern Rash</span></em></li>
-		<li><em><span style="font-family:Comic Sans MS,cursive">Headache</span></em></li>
-		<li><em><span style="font-family:Comic Sans MS,cursive">Stiffness or Swelling</span></em></li>
-		</ol>
-
-			<h3 style="text-align:center"><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is not an official diagnosis, we are doing the best we can with the pictures provided to use from the internet. The following picture is an example of an Erythema Migrans Rash:</span></em></h3>""", unsafe_allow_html = True)
+        st.write("""<h1 style="text-align: center;"><span style="background-color: #00ff00;"><em>You most likely do not have Erythema Migrans - a primary symptom of Lyme Disease</em></span></h1>
+<p><strong><em>If you are experiencing any of the following symptoms of Lyme disease, please contact your doctor:</em></strong></p>
+<ol>
+<li><em>Muscle Pain</em></li>
+<li><em>Bull's Eye Pattern Rash</em></li>
+<li><em>Headache</em></li>
+<li><em>Stiffness or Swelling</em></li>
+</ol>
+<h3><em>Please keep in mind that this is not an official diagnosis, we are doing the best we can with the pictures provided to use from the internet. The following picture is an example of an Erythema Migrans Rash:</em></h3>""", unsafe_allow_html = True)
         st.image("EM.jpg")
     else:
         st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
