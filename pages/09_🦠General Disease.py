@@ -339,7 +339,7 @@ for i in range(len(skin)):
     skin[i] = skin[i].replace("_", " ")
     skin[i] = skin[i].title()
 st.subheader("Skin")
-col1, col2 = st.columns(2)
+co1, col2 = st.columns(2)
 
 skinselect = co1.multiselect(
     "Choose any symptoms that are related to the integumentary system", skin
