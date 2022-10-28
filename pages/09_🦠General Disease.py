@@ -161,7 +161,7 @@ data = data[data.prognosis!= "Fungal infection"]
 data = data[data.prognosis!= "Paralysis (brain hemorrhage)"]
 data = data[data.prognosis!= "Heart attack"]
 
-st.write(data)
+#st.write(data)
 data["prognosis"] = encoder.fit_transform(data["prognosis"])
 symptom_index = {}
 for index, value in enumerate(symptoms):
