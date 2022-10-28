@@ -435,7 +435,7 @@ if st.button("Predict"):
 	st.write("""<h1 style="text-align:center"><span style="font-family:
 	Comic Sans MS,cursive"><span style="background-color:#e74c3c">"""+  str(predictDisease(finalstr))+ """</span></span></h1>
 	""", unsafe_allow_html=True)
-	st.write("""<p><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is a machine-learning algorithm-based predictor. Many of these classifications overfit, which means they may occasionally diagnose a disease you do not have. Please take these predictions as a grain of salt.</span></em></p>
+	st.write("""<p><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is a machine-learning algorithm-based predictor. Many of these classifications overfit, which means they may occasionally diagnose a disease you do not have. The predicted disease is not necesarily indicative of a person's actual condition. Please take these predictions as a grain of salt.</span></em></p>
 
 
 	""", unsafe_allow_html=True)
