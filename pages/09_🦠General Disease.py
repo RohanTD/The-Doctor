@@ -339,21 +339,23 @@ for i in range(len(skin)):
     skin[i] = skin[i].replace("_", " ")
     skin[i] = skin[i].title()
 st.subheader("Skin")
-skinselect = st.multiselect(
+col1, col2 = st.columns(2)
+
+skinselect = co1.multiselect(
     "Choose any symptoms that are related to the integumentary system", skin
 )
 for i in range(len(digestion)):
     digestion[i] = digestion[i].replace("_", " ")
     digestion[i] = digestion[i].title()
 st.subheader("Digestive System")
-digestionselect = st.multiselect(
+digestionselect = co1.multiselect(
     "Choose any symptoms that are related to the digestive system", digestion
 )
 for i in range(len(ent_respiratory)):
     ent_respiratory[i] = ent_respiratory[i].replace("_", " ")
     ent_respiratory[i] = ent_respiratory[i].title()
 st.subheader("ENT/Respiratory System")
-respiratoryselect = st.multiselect(
+respiratoryselect = co1.multiselect(
     "Choose any symptoms that are related to the ENT/respiratory system",
     ent_respiratory,
 )
@@ -361,7 +363,7 @@ for i in range(len(eyes)):
     eyes[i] = eyes[i].replace("_", " ")
     eyes[i] = eyes[i].title()
 st.subheader("Eyes")
-eyeselect = st.multiselect(
+eyeselect = co1.multiselect(
     "Choose any symptoms that are related to your eyes",
     eyes,
 )
@@ -369,7 +371,7 @@ for i in range(len(musculoskeletal)):
     musculoskeletal[i] = musculoskeletal[i].replace("_", " ")
     musculoskeletal[i] = musculoskeletal[i].title()
 st.subheader("Musculoskeletal System")
-musculoskeletalselect = st.multiselect(
+musculoskeletalselect = col2.multiselect(
     "Choose any symptoms that are related to your musculoskeletal system",
     musculoskeletal,
 )
@@ -377,7 +379,7 @@ for i in range(len(body_temperature)):
     body_temperature[i] = body_temperature[i].replace("_", " ")
     body_temperature[i] = body_temperature[i].title()
 st.subheader("Body Temperature")
-temperatureselect = st.multiselect(
+temperatureselect =col2.multiselect(
     "Choose any symptoms that are related to your body temperature",
     body_temperature,
 )
