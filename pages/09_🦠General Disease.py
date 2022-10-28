@@ -338,7 +338,7 @@ for i in range(len(other)):
 for i in range(len(skin)):
     skin[i] = skin[i].replace("_", " ")
     skin[i] = skin[i].title()
-st.subheader("Skin")
+#st.subheader("Skin")
 co1, col2 = st.columns(2)
 
 skinselect = co1.multiselect(
