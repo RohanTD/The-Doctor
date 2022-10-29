@@ -16,7 +16,7 @@ footer = """
 footer{
     visibility:visible;
 }
-footer:after{
+footer:before{
     content:'Please keep in mind that this is a machine learning algorithm-based predictor. Although it is highly accurate, false positive or negative results can occur. If you still have concerns after consulting our app, please contact your doctor or find a hospital using our locator tool.';
     display:block;
     position:relative;
