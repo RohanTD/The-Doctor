@@ -442,10 +442,18 @@ if st.button("Predict"):
 	""",
         unsafe_allow_html=True,
     )
-    st.write(
-        """<p><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is a machine learning algorithm-based predictor. Although the algorithm is highly accurate, false positive or negative results can occur. If you still have concerns after consulting our app, please contact your doctor or find a hospital using our locator tool.</span></em></p>
 
+footer = """
+<style>
+footer{
+    visibility:visible;
+}
+footer:before{
+    content:"Please keep in mind that this app uses predictors based on machine learning algorithms. Although they is highly accurate, false positive or negative results can occur. If you still have concerns after consulting our app, please contact your doctor or find a hospital using our locator tool.";
+    display:block;
+    position:relative;
+}
+</style>
+"""
 
-	""",
-        unsafe_allow_html=True,
-    )
+st.markdown(footer, unsafe_allow_html=True)

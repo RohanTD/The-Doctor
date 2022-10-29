@@ -85,3 +85,17 @@ def get_hospitals():
 
 
 get_hospitals()
+footer = """
+<style>
+footer{
+    visibility:visible;
+}
+footer:before{
+    content:"Please keep in mind that this app uses predictors based on machine learning algorithms. Although they is highly accurate, false positive or negative results can occur. If you still have concerns after consulting our app, please contact your doctor or find a hospital using our locator tool.";
+    display:block;
+    position:relative;
+}
+</style>
+"""
+
+st.markdown(footer, unsafe_allow_html=True)
