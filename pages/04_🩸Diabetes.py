@@ -30,7 +30,7 @@ irritability = col2.checkbox("Do you feel irritable?")
 healing = col2.checkbox("Do you have delayed healing?")
 paresis = col2.checkbox(
     "Do you have partial paresis?",
-    help="Paresis is the weakning or paralysis of muscles",
+    help="Paresis is the weakening or paralysis of muscles",
 )
 stiffness = col2.checkbox("Are your muscles stiff?")
 alopecia = col2.checkbox(

@@ -12,9 +12,9 @@ import pandas as pd
 import pickle
 
 st.set_page_config(page_title="General Disease Predictor", page_icon="🦠")
-filename = 'trainedD_model.sav'
+filename = "trainedD_model.sav"
 
-model = pickle.load(open(filename, 'rb'))
+model = pickle.load(open(filename, "rb"))
 
 symptoms = [
     "itching",
@@ -153,15 +153,15 @@ symptoms = [
 Data = "Training.csv"
 data = pd.read_csv(Data).dropna(axis=1)
 encoder = LabelEncoder()
-#dropping all the uncessary prognosis - ones that are quite obvious
-data = data[data.prognosis !="AIDS"]
-data = data[data.prognosis!= "Drug Reaction"]
-data = data[data.prognosis!= "Fungal infection"]
+# dropping all the uncessary prognosis - ones that are quite obvious
+data = data[data.prognosis != "AIDS"]
+data = data[data.prognosis != "Drug Reaction"]
+data = data[data.prognosis != "Fungal infection"]
 
-data = data[data.prognosis!= "Paralysis (brain hemorrhage)"]
-data = data[data.prognosis!= "Heart attack"]
+data = data[data.prognosis != "Paralysis (brain hemorrhage)"]
+data = data[data.prognosis != "Heart attack"]
 
-#st.write(data)
+# st.write(data)
 data["prognosis"] = encoder.fit_transform(data["prognosis"])
 symptom_index = {}
 for index, value in enumerate(symptoms):
@@ -338,7 +338,7 @@ for i in range(len(other)):
 for i in range(len(skin)):
     skin[i] = skin[i].replace("_", " ")
     skin[i] = skin[i].title()
-#st.subheader("Skin")
+# st.subheader("Skin")
 co1, col2 = st.columns(2)
 
 skinselect = co1.multiselect(
@@ -347,14 +347,14 @@ skinselect = co1.multiselect(
 for i in range(len(digestion)):
     digestion[i] = digestion[i].replace("_", " ")
     digestion[i] = digestion[i].title()
-#st.subheader("Digestive System")
+# st.subheader("Digestive System")
 digestionselect = co1.multiselect(
     "Choose any symptoms that are related to the digestive system", digestion
 )
 for i in range(len(ent_respiratory)):
     ent_respiratory[i] = ent_respiratory[i].replace("_", " ")
     ent_respiratory[i] = ent_respiratory[i].title()
-#st.subheader("ENT/Respiratory System")
+# st.subheader("ENT/Respiratory System")
 respiratoryselect = co1.multiselect(
     "Choose any symptoms that are related to the ENT/respiratory system",
     ent_respiratory,
@@ -362,7 +362,7 @@ respiratoryselect = co1.multiselect(
 for i in range(len(eyes)):
     eyes[i] = eyes[i].replace("_", " ")
     eyes[i] = eyes[i].title()
-#st.subheader("Eyes")
+# st.subheader("Eyes")
 eyeselect = co1.multiselect(
     "Choose any symptoms that are related to your eyes",
     eyes,
@@ -370,7 +370,7 @@ eyeselect = co1.multiselect(
 for i in range(len(musculoskeletal)):
     musculoskeletal[i] = musculoskeletal[i].replace("_", " ")
     musculoskeletal[i] = musculoskeletal[i].title()
-#st.subheader("Musculoskeletal System")
+# st.subheader("Musculoskeletal System")
 musculoskeletalselect = co1.multiselect(
     "Choose any symptoms that are related to your musculoskeletal system",
     musculoskeletal,
@@ -378,15 +378,15 @@ musculoskeletalselect = co1.multiselect(
 for i in range(len(body_temperature)):
     body_temperature[i] = body_temperature[i].replace("_", " ")
     body_temperature[i] = body_temperature[i].title()
-#st.subheader("Body Temperature")
-temperatureselect =col2.multiselect(
+# st.subheader("Body Temperature")
+temperatureselect = col2.multiselect(
     "Choose any symptoms that are related to your body temperature",
     body_temperature,
 )
 for i in range(len(urinary)):
     urinary[i] = urinary[i].replace("_", " ")
     urinary[i] = urinary[i].title()
-#st.subheader("Urinary System")
+# st.subheader("Urinary System")
 urinaryselect = col2.multiselect(
     "Choose any symptoms that are related to your urinary system",
     urinary,
@@ -394,7 +394,7 @@ urinaryselect = col2.multiselect(
 for i in range(len(emotional)):
     emotional[i] = emotional[i].replace("_", " ")
     emotional[i] = emotional[i].title()
-#st.subheader("Emotional/Energy")
+# st.subheader("Emotional/Energy")
 emotionselect = col2.multiselect(
     "Choose any symptoms that are related to your emotions/level of energy",
     emotional,
@@ -402,12 +402,12 @@ emotionselect = col2.multiselect(
 for i in range(len(circulatory)):
     circulatory[i] = circulatory[i].replace("_", " ")
     circulatory[i] = circulatory[i].title()
-#st.subheader("Circulatory System")
+# st.subheader("Circulatory System")
 circulatoryselect = col2.multiselect(
     "Choose any symptoms that are related to your circulatory system",
     circulatory,
 )
-#st.subheader("Other")
+# st.subheader("Other")
 otherselect = col2.multiselect("Choose any other symptoms", other)
 patientsymp = (
     skinselect
@@ -428,16 +428,24 @@ for i in range(len(patientsymp)):
     else:
         finalstr += patientsymp[i]
 if st.button("Predict"):
-	st.write(
-            """<h1 style="text-align:center">There is a chance that you may have:</h1>
+    st.write(
+        """<h1 style="text-align:center">There is a chance that you may have:</h1>
 
 		""",
-            unsafe_allow_html=True,
-        )
-	st.write("""<h1 style="text-align:center"><span style="font-family:
-	Comic Sans MS,cursive"><span style="background-color:#e74c3c">"""+  str(predictDisease(finalstr))+ """</span></span></h1>
-	""", unsafe_allow_html=True)
-	st.write("""<p><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is a machine-learning algorithm-based predictor. Many of these classifications overfit, which means they may occasionally diagnose a disease you do not have. The predicted disease is not necesarily indicative of a person's actual condition. Please take these predictions as a grain of salt.</span></em></p>
+        unsafe_allow_html=True,
+    )
+    st.write(
+        """<h1 style="text-align:center"><span style="font-family:
+	Comic Sans MS,cursive"><span style="background-color:#e74c3c">"""
+        + str(predictDisease(finalstr))
+        + """</span></span></h1>
+	""",
+        unsafe_allow_html=True,
+    )
+    st.write(
+        """<p><em><span style="font-family:Comic Sans MS,cursive">Please keep in mind that this is a machine learning algorithm-based predictor. Although the algorithm is highly accurate, false positive or negative results can occur. If you still have concerns after consulting our app, please contact your doctor or find a hospital using our locator tool.</span></em></p>
 
 
-	""", unsafe_allow_html=True)
+	""",
+        unsafe_allow_html=True,
+    )
