@@ -55,7 +55,7 @@ def getImage(img):
 <li><em>Headache</em></li>
 <li><em>Stiffness or Swelling</em></li>
 </ol>
-<h3><em>Please keep in mind that this is not an official diagnosis, we are doing the best we can with the pictures provided to use from the internet. The following picture is an example of an Erythema Migrans Rash:</em></h3>""",
+<h3><em>The following picture is an example of an Erythema Migrans Rash:</em></h3>""",
             unsafe_allow_html=True,
         )
         st.image(
@@ -65,7 +65,7 @@ def getImage(img):
     else:
         # st.subheader("Lyme at a Confidence of " + str((prediction[0]) * 100) + "%")
         st.write(
-            """<h1 style="text-align: center;"><span style="background-color: #ff6600;"><em>There is a possibility that you have Erythema Migrans - a primary symptom of Lyme Disease</em></span></h1>
+            """<h1 style="text-align: center;"><span style="background-color: #ff6600;"><em>You most likely have Erythema Migrans - a primary symptom of Lyme Disease</em></span></h1>
 <p><strong><em>If you are experiencing any of the following symptoms of Lyme disease, please contact your doctor immediately:</em></strong></p>
 <ol>
 <li><em>Muscle Pain</em></li>
