@@ -155,7 +155,6 @@ data = pd.read_csv(Data).dropna(axis=1)
 encoder = LabelEncoder()
 # dropping all the uncessary prognosis - ones that are quite obvious
 data = data[data.prognosis != "Drug Reaction"]
-data = data[data.prognosis != "Fungal infection"]
 data = data[data.prognosis != "Acne"]
 data = data[data.prognosis != "AIDS"]
 data = data[data.prognosis != "Paralysis (brain hemorrhage)"]
