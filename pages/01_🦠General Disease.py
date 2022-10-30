@@ -157,7 +157,7 @@ encoder = LabelEncoder()
 data = data[data.prognosis != "Drug Reaction"]
 data = data[data.prognosis != "Fungal infection"]
 data = data[data.prognosis != "Acne"]
-
+data = data[data.prognosis != "AIDS"]
 data = data[data.prognosis != "Paralysis (brain hemorrhage)"]
 data = data[data.prognosis != "Heart attack"]
 
