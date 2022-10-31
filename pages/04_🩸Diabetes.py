@@ -95,15 +95,49 @@ for i in range(len(symptoms)):
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
-        st.write(
-            """<div style="text-align: center;"><span style="font-size: x-large; color: #ff0000;"><strong>You have a high chance of having diabetes. Please see a doctor immediately.</strong></span></div>
-               """,
+            st.write(
+            """<div style="text-align: center;">
+                <div><span style="font-size: x-large; background-color: #ff6600;">You have a HIGH chance of having diabetes or being prediabetic. Please see a doctor immediately.</span></div>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p><strong>Diabetes is leading cause of death across the world. An estimated 6.7 million people die from diabetes yearly, representing 11.3% of all global deaths.</strong></p>
+                <p>&nbsp;</p>
+                <p><em>Identifying those at the highest risk of diabetes, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
+                <h1>&nbsp;</h1>
+                <h1>&nbsp;</h1>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <h1>&nbsp;</h1>
+                <h1>&nbsp;</h1>
+                <p>&nbsp;</p>
+                </div>""",
             unsafe_allow_html=True,
         )
     else:
         st.write(
-            """<div style="text-align: center;">
-                <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely do not have diabetes.</span></span></div>""",
+            """<div style="text-align: center;"><span style="font-size: x-large; background-color: #00ff00;">You most likely DO NOT have diabetes.</span></div>
+                <p><strong>If concerned, there are several ways you can reduce your risk of developing diabetes, such as:</strong></p>
+                <p><span>1. Lowering your blood and cholesterol levels.</span></p>
+                <p><span> 2. Eating a healthy, balanced diet which includes plant based foods.</span></p>
+                <p><span> 3. Maintaining a healthy weight.</span></p>
+                <p><span> 4. Giving up and/or avoiding smoking and tobacco.</span></p>
+                <p><span> 5. Reducing alcohol consumption.</span></p>
+                <p><span> 6. Keeping blood pressure under control.</span></p>
+                <p><span> 7. Being consistently active and involved in physical activity.</span></p>
+                <p>&nbsp;</p>
+                <p><strong>Diabetes is a leading cause of death globally. An estimated 6.7 million people died from cardiovascular diseases per year, representing 11.2% of all global deaths.</strong></p>
+                <p>&nbsp;</p>
+                <p><em>Identifying those at the highest risk of Diabetes early on,diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
+                <h1>&nbsp;</h1>
+                <h1>&nbsp;</h1>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>""",
             unsafe_allow_html=True,
         )
 footer = """
