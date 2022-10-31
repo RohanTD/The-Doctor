@@ -428,7 +428,7 @@ for i in range(len(patientsymp)):
         finalstr += patientsymp[i]
 if st.button("Predict"):
     st.write(
-        """<h1 style="text-align:center">There is a chance that you may have:</h1>
+        """<h1 style="text-align:center">Your condition is most likely:</h1>
 
 		""",
         unsafe_allow_html=True,
