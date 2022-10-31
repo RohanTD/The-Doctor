@@ -95,9 +95,17 @@ for i in range(len(symptoms)):
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
-        st.write("You likely have diabetes")
+        st.write(
+            """<div style="text-align: center;"><span style="font-size: x-large; color: #ff0000;"><strong>You have a high chance of having diabetes. Please see a doctor immediately.</strong></span></div>
+               """,
+            unsafe_allow_html=True,
+        )
     else:
-        st.write("You likely do not have diabetes")
+        st.write(
+            """<div style="text-align: center;">
+                <div><span style="font-size: x-large; color: #ccffcc;"><span style="color: #339966;">You most likely do not have diabetes.</span></span></div>""",
+            unsafe_allow_html=True,
+        )
 footer = """
 <style>
 footer{
