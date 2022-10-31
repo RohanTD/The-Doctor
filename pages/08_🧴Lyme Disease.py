@@ -17,12 +17,12 @@ st.write(
 #     img = np.reshape(img,[1,128,128,3])
 #     cnn = load_model("lyme.hdf5")
 #     return cnn.predict(img)
-confidence_val = st.slider(
-    "Choose your confidence value. The larger the number, the more false negatives that will result. The lower the number, the more false positives that will result.",
-    value=0.65,
-    max_value=0.98,
-    min_value=0.01,
-)
+confidence_val = 0.65  # st.slider(
+#     "Choose your confidence value. The larger the number, the more false negatives that will result. The lower the number, the more false positives that will result.",
+#     value=0.65,
+#     max_value=0.98,
+#     min_value=0.01,
+# )
 
 
 def get_prediction(img):
