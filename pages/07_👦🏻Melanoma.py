@@ -32,7 +32,7 @@ def get_prediction(img):
 
     image_array = np.asarray(image)
     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
-    cnn = loadModel("v4_melanoma")
+    cnn = loadModel("melanoma/melanoma_model")
     return cnn.predict(arr)
 
 
@@ -53,7 +53,7 @@ def getImage(img):
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""",
             unsafe_allow_html=True,
         )
-        i = Image.open("Melanoma.jpg")
+        i = Image.open("melanoma_positive.jpg")
         st.image(
             i,
             caption="If you identify a similar mole on your skin, please contact your doctor",
@@ -72,7 +72,7 @@ def getImage(img):
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""",
             unsafe_allow_html=True,
         )
-        i = Image.open("Melanoma.jpg")
+        i = Image.open("melanoma_positive.jpg")
         st.image(
             i,
             caption="If you identify a similar mole on your skin, please contact your doctor",
