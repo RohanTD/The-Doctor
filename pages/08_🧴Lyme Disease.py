@@ -4,7 +4,6 @@ from PIL import Image
 import numpy as np
 import streamlit as st
 
-model = load_model("lyme/lyme.hdf5")
 confidence_val = 0.8
 st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Lyme Disease  Predictor")
@@ -38,7 +37,7 @@ def get_prediction(img):
     #     image_array = np.asarray(image)
     #     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
-    cnn = load_model("lyme.hdf5")
+    cnn = load_model("lyme/lyme.hdf5")
     return cnn.predict(img)
 
 
