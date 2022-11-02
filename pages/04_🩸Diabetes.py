@@ -103,17 +103,6 @@ if st.button("Predict"):
                 <p><strong>Diabetes is leading cause of death across the world. An estimated 6.7 million people die from diabetes yearly, representing 11.3% of all global deaths.</strong></p>
                 <p>&nbsp;</p>
                 <p><em>Identifying those at the highest risk of diabetes, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
                 </div>""",
             unsafe_allow_html=True,
         )
@@ -132,12 +121,7 @@ if st.button("Predict"):
                 <p><strong>Diabetes is a leading cause of death globally. An estimated 6.7 million people died from cardiovascular diseases per year, representing 11.2% of all global deaths.</strong></p>
                 <p>&nbsp;</p>
                 <p><em>Identifying those at the highest risk of Diabetes early on,diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>""",
+                """,
             unsafe_allow_html=True,
         )
 footer = """
