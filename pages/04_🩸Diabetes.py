@@ -39,7 +39,7 @@ alopecia = col2.checkbox(
 )
 obesity = col2.checkbox("Are you obese?")
 
-rf = joblib.load("diabetes.joblib")
+rf = joblib.load("diabetes/diabetes.joblib")
 input_arr = [
     age,
     gender,
@@ -85,7 +85,7 @@ for i in range(2, len(input_arr)):
         input_arr[i] = "No"
 
 for i in range(len(symptoms)):
-    pkl_file = open("diabetes_" + symptoms[i] + ".pkl", "rb")
+    pkl_file = open("diabetes/diabetes_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
     # if symptoms[i] == "Age":
@@ -95,7 +95,7 @@ for i in range(len(symptoms)):
 if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
-            st.write(
+        st.write(
             """<div style="text-align: center;">
                 <div><span style="font-size: x-large; background-color: #ff6600;">You have a HIGH chance of having diabetes or being prediabetic. Please see a doctor immediately.</span></div>
                 <p>&nbsp;</p>
