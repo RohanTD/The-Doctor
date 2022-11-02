@@ -55,7 +55,7 @@ def covid():
     #     "Does anyone in your family work in a public exposed place(EG: Hospital) recently?",
     #     ["Yes", "No"],
     # )
-    model = joblib.load("covid.pkl")
+    model = joblib.load("covid/covid.pkl")
     input_arr = [
         breath,
         fever,

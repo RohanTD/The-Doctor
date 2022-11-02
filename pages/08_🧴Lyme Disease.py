@@ -37,7 +37,7 @@ def get_prediction(img):
     #     image_array = np.asarray(image)
     #     arr[0] = (image_array.astype(np.float32) / 127.0) - 1
 
-    cnn = load_model("lyme/lyme.hdf5")
+    cnn = load_model("lyme/lyme_model.hdf5")
     return cnn.predict(img)
 
 
