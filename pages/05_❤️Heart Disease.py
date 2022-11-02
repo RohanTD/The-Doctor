@@ -465,15 +465,14 @@ if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
         st.write(
-            """<div style="text-align: center;">
+            """Hello<div style="text-align: center;">
                 <div><span style="font-size: x-large; background-color: #ff6600;">You have a HIGH chance of having a heart and cardiovascular disease. Please see a doctor immediately.</span></div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p><strong>Cardiovascular diseases (CVDs) are the leading cause of death globally. An estimated 17.9 million people die from cardiovascular diseases yearly, representing 32% of all global deaths.</strong></p>
                 <p>&nbsp;</p>
                 <p><em>Identifying those at the highest risk of CVDs, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
-             
-                </div>""",
+                """,
             unsafe_allow_html=True,
         )
     else:
