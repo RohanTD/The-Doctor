@@ -430,7 +430,7 @@ elif cp == "Non-Anginal Pain":
 else:
     cp = 3
 
-rf = joblib.load("heart.joblib")
+rf = joblib.load("heart/heart.joblib")
 input_arr = [
     age,
     cp,
@@ -456,7 +456,7 @@ for i in [4, 6]:
         input_arr[i] = 0
 
 for i in range(len(symptoms)):
-    pkl_file = open("heart_" + symptoms[i] + ".pkl", "rb")
+    pkl_file = open("heart/heart_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
     input_arr[i] = lbl.transform([input_arr[i]])[0]
@@ -472,17 +472,7 @@ if st.button("Predict"):
                 <p><strong>Cardiovascular diseases (CVDs) are the leading cause of death globally. An estimated 17.9 million people die from cardiovascular diseases yearly, representing 32% of all global deaths.</strong></p>
                 <p>&nbsp;</p>
                 <p><em>Identifying those at the highest risk of CVDs, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
+             
                 </div>""",
             unsafe_allow_html=True,
         )
@@ -501,12 +491,7 @@ if st.button("Predict"):
                 <p><strong>Cardiovascular diseases (CVDs) are the leading cause of death globally. An estimated 17.9 million people died from cardiovascular diseases per year, representing 32% of all global deaths.</strong></p>
                 <p>&nbsp;</p>
                 <p><em>Identifying those at the highest risk of CVDs early on, diagnosing as early as possible, and ensuring patients receive appropriate treatment at the correct time can prevent premature and consequential deaths. Access to noncommunicable disease medicines and basic health technologies is essential to ensure that those in need receive appropriate care.</em></p>
-                <h1>&nbsp;</h1>
-                <h1>&nbsp;</h1>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>""",
+                """,
             unsafe_allow_html=True,
         )
 footer = """
