@@ -53,7 +53,7 @@ def getImage(img):
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""",
             unsafe_allow_html=True,
         )
-        i = Image.open("melanoma_positive.jpg")
+        i = Image.open("melanoma/melanoma_positive.jpg")
         st.image(
             i,
             caption="If you identify a similar mole on your skin, please contact your doctor",
@@ -72,7 +72,7 @@ def getImage(img):
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""",
             unsafe_allow_html=True,
         )
-        i = Image.open("melanoma_positive.jpg")
+        i = Image.open("melanoma/melanoma_positive.jpg")
         st.image(
             i,
             caption="If you identify a similar mole on your skin, please contact your doctor",
