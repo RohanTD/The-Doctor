@@ -465,7 +465,7 @@ if st.button("Predict"):
     pred = rf.predict(pd.DataFrame([input_arr], columns=symptoms))[0]
     if pred == 1:
         st.write(
-            """Hello<div style="text-align: center;">
+            """<div style="text-align: center;">
                 <div><span style="font-size: x-large; background-color: #ff6600;">You have a HIGH chance of having a heart and cardiovascular disease. Please see a doctor immediately.</span></div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
