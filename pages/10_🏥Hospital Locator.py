@@ -68,7 +68,8 @@ def get_hospitals():
 
             st.subheader(f"{place.name}")
             st.image(
-                ["star TP.png"] * (int(place.rating) if place.rating != "" else 0),
+                ["hospitals/star.png"]
+                * (int(place.rating) if place.rating != "" else 0),
                 width=20,
             )
             #  for j in range(int(place.rating)):

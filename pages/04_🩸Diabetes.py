@@ -85,7 +85,7 @@ for i in range(2, len(input_arr)):
         input_arr[i] = "No"
 
 for i in range(len(symptoms)):
-    pkl_file = open("diabetes/diabetes_" + symptoms[i] + ".pkl", "rb")
+    pkl_file = open("diabetes/encodings/diabetes_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
     # if symptoms[i] == "Age":

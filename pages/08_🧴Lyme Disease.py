@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import streamlit as st
 
-model = load_model("lyme.hdf5")
+model = load_model("lyme/lyme.hdf5")
 confidence_val = 0.8
 st.set_page_config(page_title="Lyme Disease Predictor", page_icon="🧴")
 st.markdown("# Lyme Disease  Predictor")
@@ -59,7 +59,7 @@ def getImage(img):
             unsafe_allow_html=True,
         )
         st.image(
-            "EM.jpg",
+            "lyme/positive_lyme.jpg",
             caption="If you identify a similar abnormality on your skin, please contact your doctor",
         )
     else:
@@ -77,7 +77,7 @@ def getImage(img):
             unsafe_allow_html=True,
         )
         st.image(
-            "EM.jpg",
+            "lyme/positive_lyme.jpg",
             caption="If you identify a similar abnormality on your skin, please contact your doctor",
         )
 

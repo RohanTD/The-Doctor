@@ -456,7 +456,7 @@ for i in [4, 6]:
         input_arr[i] = 0
 
 for i in range(len(symptoms)):
-    pkl_file = open("heart/heart_" + symptoms[i] + ".pkl", "rb")
+    pkl_file = open("heart/encodings/heart_" + symptoms[i] + ".pkl", "rb")
     lbl = pickle.load(pkl_file)
     pkl_file.close()
     input_arr[i] = lbl.transform([input_arr[i]])[0]

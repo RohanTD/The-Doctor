@@ -12,7 +12,7 @@ import pandas as pd
 import pickle
 
 st.set_page_config(page_title="General Disease Predictor", page_icon="🦠")
-filename = "Finall.sav"
+filename = "gendisease/gendisease.sav"
 
 model = pickle.load(open(filename, "rb"))
 
@@ -150,7 +150,7 @@ symptoms = [
     "red_sore_around_nose",
     "yellow_crust_ooze",
 ]
-Data = "Training.csv"
+Data = "gendisease/disease_input.csv"
 data = pd.read_csv(Data).dropna(axis=1)
 encoder = LabelEncoder()
 # dropping all the uncessary prognosis - ones that are quite obvious
