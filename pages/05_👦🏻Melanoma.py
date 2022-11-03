@@ -65,9 +65,9 @@ def getImage(img):
 <p>However, if you notice any of the following symptoms, please get checked by a doctor immediately:</p>
 <ol>
 <li><strong>Spread of pigment from the border of a spot into the surrounding skin</strong>.</li>
-<li><strong>Redness or a new swelling beyond the border of the mole.</strong></li>
-<li><strong>Change in sensation, such as itchiness, tenderness, or pain.</strong></li>
-<li><strong>Change in the surface of a mole &ndash; scaliness, oozing, bleeding, or the appearance of a lump or bump.</strong></li>
+<li><strong>Redness or swelling near the mole.</strong></li>
+<li><strong>Itchiness or pain near the mole.</strong></li>
+<li><strong>Change in the surface of a mole &ndash; bump in the mole or bleeding.</strong></li>
 </ol>
 <p><strong>The following picture is an image of malignant melanoma:</strong></p>""",
             unsafe_allow_html=True,
