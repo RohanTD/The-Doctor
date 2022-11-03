@@ -42,7 +42,7 @@ def getImage(img):
         # st.write("Melanoma - Confidence: " + str((1 - prediction[0]) * 100) + "%")
         st.write(
             """<h2 style="text-align: center;"><span style="background-color: #ff6600;"><em>You may have cancerous melanoma</em></span></h2>
-<h2 style="text-align: left;"><span style="font-size: 14px;">If you notice any of the following symptoms, please get checked by a doctor immediately:</span></h2>
+<h2 style="text-align: left;"><span style="font-size: 14px;">If you notice any of the following symptoms, please get checked by a doctor immediately(Source:www.cancer.org):</span></h2>
 <ol>
 <li><strong>Spread of pigment from the border into surrounding skin</strong>.</li>
 <li><strong>Redness or swelling near the mole.</strong></li>
@@ -62,7 +62,7 @@ def getImage(img):
         # st.write("Not Melanoma - Confidence: " + str((prediction[0]) * 100) + "%")
         st.write(
             """<h2 style="text-align: center;"><em><span style="background-color: #00ff00;">You most likely do not have melanoma.</span></em></h2>
-<p>However, if you notice any of the following symptoms, please get checked by a doctor immediately:</p>
+<p>However, if you notice any of the following symptoms, please get checked by a doctor immediately(Source:www.cancer.org):</p>
 <ol>
 <li><strong>Spread of pigment from the border into surrounding skin</strong>.</li>
 <li><strong>Redness or swelling near the mole.</strong></li>
