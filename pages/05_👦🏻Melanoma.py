@@ -44,7 +44,7 @@ def getImage(img):
             """<h2 style="text-align: center;"><span style="background-color: #ff6600;"><em>You may have cancerous melanoma</em></span></h2>
 <h2 style="text-align: left;"><span style="font-size: 14px;">If you notice any of the following symptoms, please get checked by a doctor immediately:</span></h2>
 <ol>
-<li><strong>Spread of pigment from the border of a spot into the surrounding skin</strong>.</li>
+<li><strong>Spread of pigment from the border into surrounding skin</strong>.</li>
 <li><strong>Redness or swelling near the mole.</strong></li>
 <li><strong>Itchiness or pain near the mole.</strong></li>
 <li><strong>Change in the skin texture near the mole, bump in the mole, or bleeding.</strong></li>
