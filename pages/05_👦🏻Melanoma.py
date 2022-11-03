@@ -64,7 +64,7 @@ def getImage(img):
             """<h2 style="text-align: center;"><em><span style="background-color: #00ff00;">You most likely do not have melanoma.</span></em></h2>
 <p>However, if you notice any of the following symptoms, please get checked by a doctor immediately:</p>
 <ol>
-<li><strong>Spread of pigment from the border of a spot into the surrounding skin</strong>.</li>
+<li><strong>Spread of pigment from the border into surrounding skin</strong>.</li>
 <li><strong>Redness or swelling near the mole.</strong></li>
 <li><strong>Itchiness or pain near the mole.</strong></li>
 <li><strong>Change in the skin texture near the mole, bump in the mole, or bleeding.</strong></li>
