@@ -6,6 +6,7 @@ from bokeh.io import show
 from bokeh.models import CustomJS, CheckboxGroup, Button
 from streamlit_bokeh_events import streamlit_bokeh_events
 import requests
+from streamlit.components.v1 import html
 
 st.set_page_config(page_title="Hospital Finder", page_icon="🏥")
 st.markdown("# Hospital Finder")
@@ -24,10 +25,7 @@ def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
     loc_button = Button(label="Allow Location Access")
-    L = ["First", "Second", "Third"]
-    checkbox_group = CheckboxGroup(labels=L, active=[0, 2])
-    show(loc_button)
-    show(checkbox_group)
+
     loc_button.js_on_click(
         CustomJS(
             code="""
