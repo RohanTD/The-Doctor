@@ -46,15 +46,9 @@ def get_hospitals():
         debounce_time=0,
     )
 
-    # Button(label="testing")
-    # response = get_geolocation()
     if response != None:
         places = GooglePlaces(a)
         query_result = places.nearby_search(
-            # lat_lng={
-            #     "lat": response["latitude"],
-            #     "lng": response["longitude"],
-            # },
             lat_lng={
                 "lat": response["GET_LOCATION"]["lat"],
                 "lng": response["GET_LOCATION"]["lon"],
