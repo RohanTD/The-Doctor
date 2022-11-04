@@ -16,6 +16,7 @@ st.write(
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
+    st.write("HI")
     loc_button = Button(label="Allow Location Access")
     loc_button.js_on_event(
         "button_click",
@@ -86,6 +87,7 @@ def get_hospitals():
 
 
 get_hospitals()
+
 footer = """
 <style>
 footer{
