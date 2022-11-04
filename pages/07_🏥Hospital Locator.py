@@ -24,8 +24,10 @@ def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
     loc_button = Button(label="Allow Location Access")
+    L = ["First", "Second", "Third"]
     checkbox_group = CheckboxGroup(labels=L, active=[0, 2])
     show(loc_button)
+    show(checkbox_group)
     loc_button.js_on_click(
         CustomJS(
             code="""
