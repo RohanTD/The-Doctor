@@ -3,7 +3,7 @@ import streamlit as st
 from googleplaces import GooglePlaces, types, lang
 from bokeh.models.widgets import Button
 from bokeh.io import show
-from bokeh.models import CustomJS
+from bokeh.models import CustomJS, CheckboxGroup, Button
 from streamlit_bokeh_events import streamlit_bokeh_events
 import requests
 
@@ -24,6 +24,7 @@ def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
     loc_button = Button(label="Allow Location Access")
+    checkbox_group = CheckboxGroup(labels=L, active=[0, 2])
     show(loc_button)
     loc_button.js_on_click(
         CustomJS(
