@@ -44,6 +44,7 @@ def get_hospitals():
     #     debounce_time=0,
     # )
 
+    Button("testing")
     response = get_geolocation()
     if response != None:
         places = GooglePlaces(a)
