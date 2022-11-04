@@ -4,7 +4,7 @@ from googleplaces import GooglePlaces, types, lang
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
-import requests
+
 
 st.set_page_config(page_title="Hospital Finder", page_icon="🏥")
 st.markdown("# Hospital Finder")
@@ -13,44 +13,36 @@ st.write(
 )
 
 
-def get_geolocation():
-    key = "e331cd0c8f0f4bf2a798f291afdc79b4"
-    response = requests.get("https://api.ipgeolocation.io/ipgeo?apiKey=" + key)
-    return response.json()
-
-
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
-    # loc_button = Button(label="Allow Location Access")
-    # loc_button.js_on_event(
-    #     "button_click",
-    #     CustomJS(
-    #         code="""
-    #             navigator.geolocation.getCurrentPosition(
-    #                 (loc) => {
-    #                     document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
-    #                 }
-    #             )
-    #         """
-    #     ),
-    # )
-    # response = streamlit_bokeh_events(
-    #     loc_button,
-    #     events="GET_LOCATION",
-    #     key="get_location",
-    #     refresh_on_update=False,
-    #     override_height=75,
-    #     debounce_time=0,
-    # )
-
-    response = get_geolocation()
+    loc_button = Button(label="Allow Location Access")
+    loc_button.js_on_event(
+        "button_click",
+        CustomJS(
+            code="""
+                navigator.geolocation.getCurrentPosition(
+                    (loc) => {
+                        document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+                    }
+                )
+            """
+        ),
+    )
+    response = streamlit_bokeh_events(
+        loc_button,
+        events="GET_LOCATION",
+        key="get_location",
+        refresh_on_update=False,
+        override_height=75,
+        debounce_time=0,
+    )
     if response != None:
         places = GooglePlaces(a)
         query_result = places.nearby_search(
             lat_lng={
-                "lat": response["latitude"],
-                "lng": response["longitude"],
+                "lat": response["GET_LOCATION"]["lat"],
+                "lng": response["GET_LOCATION"]["lon"],
             },
             radius=range1 * 1609,
             types=[types.TYPE_HOSPITAL],
