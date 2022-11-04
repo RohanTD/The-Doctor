@@ -22,36 +22,39 @@ def get_geolocation():
 def get_hospitals():
     a = "AIzaSyDCd_LRkdU3mHBQ01PY9zSxNat6AI_oD1M"
     range1 = 10  # in miles
-    # loc_button = Button(label="Allow Location Access")
-    # loc_button.js_on_event(
-    #     "button_click",
-    #     CustomJS(
-    #         code="""
-    #             navigator.geolocation.getCurrentPosition(
-    #                 (loc) => {
-    #                     document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
-    #                 }
-    #             )
-    #         """
-    #     ),
-    # )
-    # response = streamlit_bokeh_events(
-    #     loc_button,
-    #     events="GET_LOCATION",
-    #     key="get_location",
-    #     refresh_on_update=False,
-    #     override_height=75,
-    #     debounce_time=0,
-    # )
+    loc_button = Button(label="Allow Location Access")
+    loc_button.js_on_click(
+        CustomJS(
+            code="""
+                navigator.geolocation.getCurrentPosition(
+                    (loc) => {
+                        document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+                    }
+                )
+            """
+        ),
+    )
+    response = streamlit_bokeh_events(
+        loc_button,
+        events="GET_LOCATION",
+        key="get_location",
+        refresh_on_update=False,
+        override_height=75,
+        debounce_time=0,
+    )
 
-    Button(label="testing")
-    response = get_geolocation()
+    # Button(label="testing")
+    # response = get_geolocation()
     if response != None:
         places = GooglePlaces(a)
         query_result = places.nearby_search(
+            # lat_lng={
+            #     "lat": response["latitude"],
+            #     "lng": response["longitude"],
+            # },
             lat_lng={
-                "lat": response["latitude"],
-                "lng": response["longitude"],
+                "lat": response["GET_LOCATION"]["lat"],
+                "lng": response["GET_LOCATION"]["lon"],
             },
             radius=range1 * 1609,
             types=[types.TYPE_HOSPITAL],
