@@ -8,7 +8,6 @@ st.markdown("# Diabetes  Predictor")
 st.write("Input your symptoms below")
 
 age = st.number_input("How old are you?", value=25, min_value=25, max_value=70)
-gender = st.selectbox("What is your biological gender?", ["Male", "Female"])
 col1, col2 = st.columns(2)
 
 polyuria = col1.checkbox(
@@ -42,7 +41,6 @@ obesity = col2.checkbox("Are you obese?")
 rf = joblib.load("diabetes/diabetes.joblib")
 input_arr = [
     age,
-    gender,
     polyuria,
     polydipsia,
     weight,
@@ -60,7 +58,6 @@ input_arr = [
 ]
 symptoms = [
     "Age",
-    "Gender",
     "Polyuria",
     "Polydipsia",
     "sudden weight loss",
