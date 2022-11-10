@@ -75,7 +75,7 @@ symptoms = [
 ]
 
 
-for i in range(2, len(input_arr)):
+for i in range(1, len(input_arr)):
     if input_arr[i]:
         input_arr[i] = "Yes"
     else:
