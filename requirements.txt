@@ -15,5 +15,5 @@ python-google-places
 bokeh<3.0.0
 streamlit-bokeh-events
 joblib
-sklearn
+scikit-learn
 pickle5
